@@ -23,8 +23,8 @@ namespace Hangman
         {
             Stringovi.Add("KOCKA");
             Stringovi.Add("TELEVIZOR");
-            Stringovi.Add("BANANA");
-            Stringovi.Add("PROZOR");
+            Stringovi.Add("ATAVIZAM");
+            Stringovi.Add("MIMIKRIJA");
             Stringovi.Add("MOBITEL");
         }
         string BirajRandomRijec()
@@ -45,7 +45,7 @@ namespace Hangman
             string novi = "";
             for (int i = 0; i < RandomRijec.Length; i++)
             {
-                novi += "-"; //randomRijec.Length*2
+                novi += "-"; 
             }
             lblNepoznataRijec.Text = novi;
             BrojacPokusaja = 0;
@@ -100,7 +100,6 @@ namespace Hangman
 
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
-           //treba li mi ono if sender is Button?
            ++BrojacPokusaja;
            lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
            lblPoruka.Text = "";
@@ -111,7 +110,7 @@ namespace Hangman
                txtUnos.Enabled = true;
            }
                     
-           if (!string.IsNullOrWhiteSpace(txtUnos.Text)) //txtUnos.Text!=""
+           if (!string.IsNullOrWhiteSpace(txtUnos.Text))
            {
                if(!JeLiPogodjenaRijec() && !JeLiPogodjenoSlovo())
                {
