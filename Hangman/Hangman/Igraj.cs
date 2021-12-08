@@ -15,6 +15,7 @@ namespace Hangman
         public Igraj()
         {
             InitializeComponent();
+            GenerisanjeRijeciZaPogadjanje();
         }
         public int BrojacPokusaja { get; set; } = 0;
         public List<string> Stringovi { get; set; } = new List<string>();
@@ -29,14 +30,9 @@ namespace Hangman
         }
         string BirajRandomRijec()
         {
-            GenerisanjeRijeciZaPogadjanje();
-            if (Stringovi.Count > 0)
-            {
-                var random = new Random();
-                int i = random.Next(Stringovi.Count);
-                return Stringovi[i];
-            }
-            return null;         
+            var random = new Random();
+            int i = random.Next(Stringovi.Count);
+            return Stringovi[i];            
         }
         public void Igranje()
         {
