@@ -46,25 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmHangman.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmHangman.Designer.cs">
+      <DependentUpon>frmHangman.cs</DependentUpon>
     </Compile>
-    <Compile Include="Igraj.cs">
+    <Compile Include="frmRezultat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Igraj.Designer.cs">
-      <DependentUpon>Igraj.cs</DependentUpon>
+    <Compile Include="frmRezultat.Designer.cs">
+      <DependentUpon>frmRezultat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIgraj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIgraj.Designer.cs">
+      <DependentUpon>frmIgraj.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmHangman.resx">
+      <DependentUpon>frmHangman.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Igraj.resx">
-      <DependentUpon>Igraj.cs</DependentUpon>
+    <EmbeddedResource Include="frmRezultat.resx">
+      <DependentUpon>frmRezultat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIgraj.resx">
+      <DependentUpon>frmIgraj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

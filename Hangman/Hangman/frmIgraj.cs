@@ -10,29 +10,28 @@ using System.Windows.Forms;
 
 namespace Hangman
 {
-    public partial class Igraj : Form
+    public partial class frmIgraj : Form
     {
-        public Igraj()
+        public frmIgraj()
         {
             InitializeComponent();
-            GenerisanjeRijeciZaPogadjanje();
+            Stringovi = new List<string>() { "KOCKA", "TELEVIZOR", "MIMIKRIJA", "ATAVIZAM", "MOBITEL" };
         }
         public int BrojacPokusaja { get; set; } = 0;
-        public List<string> Stringovi { get; set; } = new List<string>();
-        public string RandomRijec { get; set; } 
-        void GenerisanjeRijeciZaPogadjanje()
-        {
-            Stringovi.Add("KOCKA");
-            Stringovi.Add("TELEVIZOR");
-            Stringovi.Add("ATAVIZAM");
-            Stringovi.Add("MIMIKRIJA");
-            Stringovi.Add("MOBITEL");
-        }
+        public List<string> Stringovi { get; set; }
+        public string RandomRijec { get; set; } = "";
+        public static int BrojPobjeda { get; set; } = 0;
+        public static int BrojacNovaIgra { get; set; } = 0;
+
         string BirajRandomRijec()
         {
             var random = new Random();
             int i = random.Next(Stringovi.Count);
-            return Stringovi[i];            
+            while (Stringovi[i] == RandomRijec)
+            {
+                i = random.Next(Stringovi.Count);
+            }
+            return Stringovi[i];        
         }
         public void Igranje()
         {
@@ -70,13 +69,14 @@ namespace Hangman
                     else
                         valid = false;
 
-                    if (lblNepoznataRijec.Text == RandomRijec && BrojacPokusaja < 5)
+                    if (lblNepoznataRijec.Text == RandomRijec && BrojacPokusaja < 7)
                     {
                         lblPoruka.Text = "Bravo!!!";
                         txtUnos.Enabled = false;
                         txtUnos.BackColor = Color.LimeGreen;
                         BrojacPokusaja = 0;
                         btnPotvrdi.Enabled = false;
+                        BrojPobjeda++;
                     }
                 }
                 return valid;
@@ -96,17 +96,28 @@ namespace Hangman
 
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
-           ++BrojacPokusaja;
-           lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
-           lblPoruka.Text = "";
+            if (txtUnos.Text != "")
+            {
+                ++BrojacPokusaja;
+                lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
+                lblPoruka.Text = "";
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Niste nista napisali... Jeste li sigurni da zelite potvrditi?", "Potvrdi unos", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes) {
+                    ++BrojacPokusaja;
+                    lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
+                }
+            }
           
-           if (BrojacPokusaja < 5) 
+           if (BrojacPokusaja < 7) 
            {
                txtUnos.BackColor = Color.White;
                txtUnos.Enabled = true;
            }
                     
-           if (!string.IsNullOrWhiteSpace(txtUnos.Text))
+           if (!string.IsNullOrWhiteSpace(txtUnos.Text)) 
            {
                if(!JeLiPogodjenaRijec() && !JeLiPogodjenoSlovo())
                {
@@ -114,12 +125,14 @@ namespace Hangman
                }
                if (JeLiPogodjenaRijec())
                {
-                   lblPoruka.Text = "Bravo! Pogodili ste trazenu rijec!";                      
+                   lblPoruka.Text = "Bravo! Pogodili ste trazenu rijec!";
+                    BrojPobjeda++;
                }
            }
-           if (BrojacPokusaja == 5)
+           if (BrojacPokusaja == 7)
            {
                 OnemoguciUnos();
+                txtUnos.Text = RandomRijec;
            }          
         }
         private void OnemoguciUnos()
@@ -131,14 +144,25 @@ namespace Hangman
             lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
             btnPotvrdi.Enabled = false;
         }
-        private void btnNovaIgra_Click(object sender, EventArgs e)
+        private void Resetuj()
         {
             BrojacPokusaja = 0;
             lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
             txtUnos.Text = "";
             txtUnos.BackColor = Color.White;
             btnPotvrdi.Enabled = true;
+            txtUnos.Text = "";
+        }
+        private void btnNovaIgra_Click(object sender, EventArgs e)
+        {
+            BrojacNovaIgra++;
+            Resetuj();
             Igranje();
-        }    
+        }
+
+        private void btnScore_Click(object sender, EventArgs e)
+        {
+            new frmRezultat().ShowDialog();
+        }
     }
 }

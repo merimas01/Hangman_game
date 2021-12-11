@@ -19,7 +19,7 @@ namespace Hangman
 
         private void btnAgree_Click(object sender, EventArgs e)
         {
-            Igraj igraj = new Igraj();
+            frmIgraj igraj = new frmIgraj();
             igraj.Igranje();
             igraj.ShowDialog();
         }

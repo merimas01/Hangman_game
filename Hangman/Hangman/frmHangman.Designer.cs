@@ -41,7 +41,7 @@ namespace Hangman
             this.lblPravilaIgre.Name = "lblPravilaIgre";
             this.lblPravilaIgre.Size = new System.Drawing.Size(346, 150);
             this.lblPravilaIgre.TabIndex = 0;
-            this.lblPravilaIgre.Text = "Pravila igre:\r\n\r\n>> Imate 5 pokušaja da pogodite riječ. \r\n>> Možete ukucati riječ" +
+            this.lblPravilaIgre.Text = "Pravila igre:\r\n\r\n>> Imate 7 pokušaja da pogodite riječ. \r\n>> Možete ukucati riječ" +
     " ili slovo. \r\n\r\nSretno!";
             // 
             // btnAgree
