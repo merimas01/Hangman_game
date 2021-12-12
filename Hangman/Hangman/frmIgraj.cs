@@ -110,7 +110,7 @@ namespace Hangman
                 }
             }
           
-           if (BrojacPokusaja < 7) 
+           if (BrojacPokusaja < 5) 
            {
                txtUnos.BackColor = Color.White;
                txtUnos.Enabled = true;
