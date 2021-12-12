@@ -15,7 +15,7 @@ namespace Hangman
         public frmIgraj()
         {
             InitializeComponent();
-            Stringovi = new List<string>() { "KOCKA", "TELEVIZOR", "MIMIKRIJA", "ATAVIZAM", "MOBITEL" };
+            Stringovi = new List<string>() { "KOCKA", "TELEVIZOR", "MIMIKRIJA", "ATAVIZAM", "MOBITEL", "UB" };
         }
         public int BrojacPokusaja { get; set; } = 0;
         public List<string> Stringovi { get; set; }
@@ -40,7 +40,7 @@ namespace Hangman
             string novi = "";
             for (int i = 0; i < RandomRijec.Length; i++)
             {
-                novi += "-"; 
+                novi += "_ "; 
             }
             lblNepoznataRijec.Text = novi;
             BrojacPokusaja = 0;
@@ -48,40 +48,29 @@ namespace Hangman
         }
         bool JeLiPogodjenoSlovo()
         {
+            bool valid = false;
             if (txtUnos.Text.Length == 1) //ako je ukucao samo jedno slovo
-            {
-                bool valid = false;
+            {              
                 for (int i = 0; i < RandomRijec.Length; i++)
                 {
                     if (txtUnos.Text.ToUpper()[0] == RandomRijec[i])
                     {
                         string noviText = "";
-                        for (int j = 0; j < lblNepoznataRijec.Text.Length; j++)
+                        for (int j = 0; j < lblNepoznataRijec.Text.Length; j++) 
                         {
-                            if (j == i)
+                            if (j == (i * 2))
+                            {
                                 noviText += txtUnos.Text.ToUpper();
+                            }
                             else
                                 noviText += lblNepoznataRijec.Text[j];                           
                         }
-                        lblNepoznataRijec.Text = noviText;
+                        lblNepoznataRijec.Text = noviText;                                              
                         valid = true;                     
                     }
-                    else
-                        valid = false;
-
-                    if (lblNepoznataRijec.Text == RandomRijec && BrojacPokusaja < 7)
-                    {
-                        lblPoruka.Text = "Bravo!!!";
-                        txtUnos.Enabled = false;
-                        txtUnos.BackColor = Color.LimeGreen;
-                        BrojacPokusaja = 0;
-                        btnPotvrdi.Enabled = false;
-                        BrojPobjeda++;
-                    }
-                }
-                return valid;
-            }        
-            return false; 
+                }               
+            }
+            return valid;
         }
         bool JeLiPogodjenaRijec()
         {
@@ -91,20 +80,30 @@ namespace Hangman
                 lblNepoznataRijec.Text = RandomRijec;
                 return true;
             }
+            int k = 0;
+            for(int i=0; i<lblNepoznataRijec.Text.Length; i += 2)
+            {
+                if (lblNepoznataRijec.Text[i] == RandomRijec[k])
+                    k++;
+            }
+            if (k == RandomRijec.Length)
+            {
+                OnemoguciUnos();
+                lblNepoznataRijec.Text = RandomRijec;
+                return true;
+            } 
             return false;
         }
 
         private void btnPotvrdi_Click(object sender, EventArgs e)
         {
-            if (txtUnos.Text != "")
+            if (!string.IsNullOrWhiteSpace(txtUnos.Text))
             {
-                ++BrojacPokusaja;
-                lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
                 lblPoruka.Text = "";
             }
             else
             {
-                DialogResult result = MessageBox.Show("Niste nista napisali... Jeste li sigurni da zelite potvrditi?", "Potvrdi unos", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Niste nista napisali... Jeste li sigurni da zelite potvrditi unos?", "Potvrdi unos", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes) {
                     ++BrojacPokusaja;
                     lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
@@ -122,14 +121,20 @@ namespace Hangman
                if(!JeLiPogodjenaRijec() && !JeLiPogodjenoSlovo())
                {
                    txtUnos.Text = "";
+                   ++BrojacPokusaja;
+                   lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
+                }
+               if(JeLiPogodjenoSlovo())
+               {
+                    txtUnos.Text = "";
                }
                if (JeLiPogodjenaRijec())
                {
                    lblPoruka.Text = "Bravo! Pogodili ste trazenu rijec!";
-                    BrojPobjeda++;
+                   BrojPobjeda++;
                }
            }
-           if (BrojacPokusaja == 7)
+           if (BrojacPokusaja == 5)
            {
                 OnemoguciUnos();
                 txtUnos.Text = RandomRijec;

@@ -75,6 +75,7 @@ namespace Hangman
             // 
             // lblBrojacPokusaja
             // 
+            this.lblBrojacPokusaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblBrojacPokusaja.AutoSize = true;
             this.lblBrojacPokusaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblBrojacPokusaja.Location = new System.Drawing.Point(224, 238);
@@ -89,7 +90,7 @@ namespace Hangman
             this.txtUnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtUnos.Location = new System.Drawing.Point(229, 144);
             this.txtUnos.Name = "txtUnos";
-            this.txtUnos.Size = new System.Drawing.Size(348, 30);
+            this.txtUnos.Size = new System.Drawing.Size(353, 30);
             this.txtUnos.TabIndex = 5;
             // 
             // lblUkucaj
@@ -121,7 +122,7 @@ namespace Hangman
             this.btnPotvrdi.BackColor = System.Drawing.Color.MintCream;
             this.btnPotvrdi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPotvrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnPotvrdi.Location = new System.Drawing.Point(595, 141);
+            this.btnPotvrdi.Location = new System.Drawing.Point(600, 141);
             this.btnPotvrdi.Name = "btnPotvrdi";
             this.btnPotvrdi.Size = new System.Drawing.Size(117, 41);
             this.btnPotvrdi.TabIndex = 8;
@@ -136,7 +137,7 @@ namespace Hangman
             this.btnNovaIgra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovaIgra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovaIgra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNovaIgra.Location = new System.Drawing.Point(595, 216);
+            this.btnNovaIgra.Location = new System.Drawing.Point(600, 216);
             this.btnNovaIgra.Name = "btnNovaIgra";
             this.btnNovaIgra.Size = new System.Drawing.Size(117, 47);
             this.btnNovaIgra.TabIndex = 9;
@@ -151,7 +152,7 @@ namespace Hangman
             this.btnScore.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnScore.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnScore.Location = new System.Drawing.Point(595, 284);
+            this.btnScore.Location = new System.Drawing.Point(600, 296);
             this.btnScore.Name = "btnScore";
             this.btnScore.Size = new System.Drawing.Size(117, 45);
             this.btnScore.TabIndex = 11;
@@ -159,11 +160,11 @@ namespace Hangman
             this.btnScore.UseVisualStyleBackColor = false;
             this.btnScore.Click += new System.EventHandler(this.btnScore_Click);
             // 
-            // Igraj
+            // frmIgraj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 384);
+            this.ClientSize = new System.Drawing.Size(744, 384);
             this.Controls.Add(this.btnScore);
             this.Controls.Add(this.btnNovaIgra);
             this.Controls.Add(this.btnPotvrdi);
@@ -175,7 +176,7 @@ namespace Hangman
             this.Controls.Add(this.lblNepoznataRijec);
             this.Controls.Add(this.lblPogodiRijec);
             this.MaximizeBox = false;
-            this.Name = "Igraj";
+            this.Name = "frmIgraj";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Igraj";
             this.ResumeLayout(false);
