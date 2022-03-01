@@ -11,16 +11,19 @@ using System.Windows.Forms;
 namespace Hangman
 {
     public partial class frmRezultat : Form
-    {
+    {       
         public frmRezultat()
         {
             InitializeComponent();
         }
 
         private void frmRezultat_Load(object sender, EventArgs e)
-        {
-            var procenat = ((frmIgraj.BrojPobjeda*1.0f) / (frmIgraj.BrojacNovaIgra + 1)) * 100; //ovo +1 je inicijalna igra kad kliknemo na shvatam
-            lblTekst.Text = $"Ostvarili ste {frmIgraj.BrojPobjeda} pobjeda od {frmIgraj.BrojacNovaIgra + 1} zapocetih igri. Vas ukupan procenat uspjeha je {procenat}%";
+        {               
+            var procenat = Math.Round(((frmIgraj.BrojPobjeda*1.0m) / (frmIgraj.BrojacNovaIgra)) * 100, 0);
+            lblTekst.Text = $"Ostvarili ste {frmIgraj.BrojPobjeda} pobjeda od {frmIgraj.BrojacNovaIgra} započetih igri. " +
+                $"Vaš ukupan procenat uspjeha je {procenat}%" + Environment.NewLine+ Environment.NewLine+
+                $"Ukupno osvojenih bodova: {frmIgraj.Suma}";    //izbrisati dio za bodove... jer ako se korisnik svicuje na
+                                                                //drugi level, bodovi iz prvog levela ce se izbrisati
         }
     }
 }

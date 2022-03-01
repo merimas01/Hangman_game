@@ -29,6 +29,7 @@ namespace Hangman
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHangman));
             this.lblPravilaIgre = new System.Windows.Forms.Label();
             this.btnAgree = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -36,13 +37,12 @@ namespace Hangman
             // lblPravilaIgre
             // 
             this.lblPravilaIgre.AutoSize = true;
-            this.lblPravilaIgre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPravilaIgre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPravilaIgre.Location = new System.Drawing.Point(44, 41);
             this.lblPravilaIgre.Name = "lblPravilaIgre";
-            this.lblPravilaIgre.Size = new System.Drawing.Size(376, 150);
+            this.lblPravilaIgre.Size = new System.Drawing.Size(743, 260);
             this.lblPravilaIgre.TabIndex = 0;
-            this.lblPravilaIgre.Text = "Pravila igre:\r\n\r\n>> Imate 5 dozvoljenih puta da pogriješite.\r\n>> Možete ukucati r" +
-    "iječ ili slovo. \r\n\r\nSretno!";
+            this.lblPravilaIgre.Text = resources.GetString("lblPravilaIgre.Text");
             // 
             // btnAgree
             // 
@@ -50,7 +50,7 @@ namespace Hangman
             this.btnAgree.BackColor = System.Drawing.Color.LimeGreen;
             this.btnAgree.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnAgree.Location = new System.Drawing.Point(170, 267);
+            this.btnAgree.Location = new System.Drawing.Point(359, 372);
             this.btnAgree.Name = "btnAgree";
             this.btnAgree.Size = new System.Drawing.Size(120, 50);
             this.btnAgree.TabIndex = 2;
@@ -62,7 +62,7 @@ namespace Hangman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 329);
+            this.ClientSize = new System.Drawing.Size(873, 434);
             this.Controls.Add(this.btnAgree);
             this.Controls.Add(this.lblPravilaIgre);
             this.MaximizeBox = false;

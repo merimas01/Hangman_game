@@ -52,6 +52,18 @@
     <Compile Include="frmHangman.Designer.cs">
       <DependentUpon>frmHangman.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfo.Designer.cs">
+      <DependentUpon>frmInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLevels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLevels.Designer.cs">
+      <DependentUpon>frmLevels.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRezultat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,12 @@
     <EmbeddedResource Include="frmHangman.resx">
       <DependentUpon>frmHangman.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInfo.resx">
+      <DependentUpon>frmInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLevels.resx">
+      <DependentUpon>frmLevels.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRezultat.resx">
       <DependentUpon>frmRezultat.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -97,5 +116,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

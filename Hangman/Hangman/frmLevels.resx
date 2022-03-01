@@ -117,16 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblPravilaIgre.Text" xml:space="preserve">
-    <value>Pravila igre:
-
-&gt;&gt; Za svaki odabrani level imate 5, 4 ili 3 šanse da pogriješite
-&gt;&gt; Možete ukucati riječ ili slovo. 
-&gt;&gt; Pritiskom na dugme Help možete da dobijete slovo, ali i ne. Imate 5 prilika za to.
-&gt;&gt; Ukoliko ostvarite dovoljan broj bodova na određenom levelu,
-      moći ćete pristupiti opcijama TRY SENTENCES i CHALLENGE YOURSELF.
-&gt;&gt; Za više informacija, kliknite na info polje kada započnete igricu.
-
-Sretno!</value>
-  </data>
 </root>
