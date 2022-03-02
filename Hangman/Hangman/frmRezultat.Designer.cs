@@ -37,7 +37,7 @@ namespace Hangman
             this.lblTekst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTekst.AutoSize = true;
             this.lblTekst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblTekst.Location = new System.Drawing.Point(12, 20);
+            this.lblTekst.Location = new System.Drawing.Point(12, 26);
             this.lblTekst.MaximumSize = new System.Drawing.Size(250, 0);
             this.lblTekst.Name = "lblTekst";
             this.lblTekst.Size = new System.Drawing.Size(0, 25);
@@ -47,7 +47,7 @@ namespace Hangman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 248);
+            this.ClientSize = new System.Drawing.Size(362, 217);
             this.Controls.Add(this.lblTekst);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

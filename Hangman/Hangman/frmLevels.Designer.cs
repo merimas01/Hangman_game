@@ -156,6 +156,7 @@ namespace Hangman
             this.MinimizeBox = false;
             this.Name = "frmLevels";
             this.Text = "frmLevels";
+            this.Load += new System.EventHandler(this.frmLevels_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

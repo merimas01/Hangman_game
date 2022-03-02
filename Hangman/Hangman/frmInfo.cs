@@ -99,7 +99,8 @@ namespace Hangman
                        "Klikom na Help možete da dobijete pomoćno slovo (imate 5 šansi za to)." + Environment.NewLine +
                        "Klikom na Nova igra započinjete novu igru. " + Environment.NewLine +
                        "Klikom na Score, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine +
-                       "VAŽNO: U ovom levelu NEMA BODOVANJA, pa tako ni nemate šanse da pristupite opciji Challenge yourself." + Environment.NewLine + Environment.NewLine +
+                       "VAŽNO: U ovom levelu NEMA BODOVANJA, pa tako ni nemate šanse da pristupite opcijama " + Environment.NewLine+
+                       "TRY SENTENCES i CHALLENGE YOURSELF." + Environment.NewLine + Environment.NewLine +
                        "Igranje možete prekinuti kada god želite." + Environment.NewLine + Environment.NewLine +
                        "SRETNO!";
             }

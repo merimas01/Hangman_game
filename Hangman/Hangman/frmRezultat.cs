@@ -21,9 +21,7 @@ namespace Hangman
         {               
             var procenat = Math.Round(((frmIgraj.BrojPobjeda*1.0m) / (frmIgraj.BrojacNovaIgra)) * 100, 0);
             lblTekst.Text = $"Ostvarili ste {frmIgraj.BrojPobjeda} pobjeda od {frmIgraj.BrojacNovaIgra} započetih igri. " +
-                $"Vaš ukupan procenat uspjeha je {procenat}%" + Environment.NewLine+ Environment.NewLine+
-                $"Ukupno osvojenih bodova: {frmIgraj.Suma}";    //izbrisati dio za bodove... jer ako se korisnik svicuje na
-                                                                //drugi level, bodovi iz prvog levela ce se izbrisati
+                $"Vaš ukupan procenat uspjeha je {procenat}%";    
         }
     }
 }

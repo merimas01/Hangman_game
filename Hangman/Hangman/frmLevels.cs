@@ -43,15 +43,10 @@ namespace Hangman
             frmIgraj igraj = new frmIgraj();
             igraj.ShowDialog();
         }
-        //private void btnSentences_Click(object sender, EventArgs e)
-        //{
-        //    frmIgraj igraj = new frmIgraj(Sentences);
-        //    igraj.ShowDialog();
-        //}
-        //private void btnChallenging_Click(object sender, EventArgs e)
-        //{
-        //    frmIgraj igraj = new frmIgraj(Challenging);
-        //    igraj.ShowDialog();
-        //}        
+
+        private void frmLevels_Load(object sender, EventArgs e)
+        {
+            Text = "Levels";
+        }
     }
 }

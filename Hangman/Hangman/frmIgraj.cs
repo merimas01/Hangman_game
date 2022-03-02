@@ -18,7 +18,6 @@ namespace Hangman
             BrojacNovaIgra += 1; //kada se pokrece inicijalna igra
             Level = level;
             Resetuj();
-            ticks = 0;
             if (level == "easy")
             {
                 StringoviEasy();
@@ -89,8 +88,9 @@ namespace Hangman
       
             lblBrojSlova.Text = RandomRijec.Length.ToString();
 
-            if (buttonChallengingClicked == true)//btnChallenging.Enabled == true
+            if (buttonChallengingClicked == true)
             {
+                ticks = 0;
                 timer1.Enabled = true;
                 timer1.Start();
             }
@@ -236,9 +236,7 @@ namespace Hangman
             {
                 ticks = 0;
                 timer1.Start();
-            }
-            //btnSentences.Enabled = false;
-            //btnChallenging.Enabled = false;        
+            }        
             Resetuj();
             Igranje();
         }
@@ -327,9 +325,11 @@ namespace Hangman
                     Suma += 10;
             }
 
-            if(Suma>=20 && Suma<=39 && buttonSentencesClicked == false && buttonChallengingClicked==false) //provjeriti, trebalo bi da samo jednom poveca vrijednost
+            if(Suma>=20 && Suma<=39 && buttonSentencesClicked == false && buttonChallengingClicked==false) 
                 Suma += 10;
-            lblBodovi.Text = Suma.ToString();       
+
+            if(Level!="")
+               lblBodovi.Text = Suma.ToString();       
         }
         private void EnablebtnChallenging()
         {
@@ -386,6 +386,7 @@ namespace Hangman
         {
             buttonSentencesClicked = true;
             btnNazad.Enabled = true;
+            EnablebtnChallenging();
             buttonChallengingClicked = false;
             lblTimer.Text = "OFF";
             Resetuj();
