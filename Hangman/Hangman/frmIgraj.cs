@@ -18,6 +18,8 @@ namespace Hangman
             BrojacNovaIgra += 1; //kada se pokrece inicijalna igra
             Level = level;
             Resetuj();
+            Suma = 0;
+           // lblBodovi.Text = Suma.ToString(); // lblBodovi.Text = lblBodoviEasy.Text
             if (level == "easy")
             {
                 StringoviEasy();
@@ -33,19 +35,25 @@ namespace Hangman
             else if (level == "")
             {
                 StringoviRandom();
-            }         
+            }
+            //EnablebtnChallenging();
+            //EnablebtnSentences();
+            //buttonChallengingClicked = false;
+            //buttonSentencesClicked = false;
         }
-        public static int Suma { get; set; } = 0;
-        public string Level { get; set; } = "";
-        public static int BrojacPokusaja { get; set; } = 0; //broj gresaka
-        public List<string> Stringovi { get; set; }
-        public string RandomRijec { get; set; } = "";
-        public static int BrojPobjeda { get; set; } = 0;
-        public static int BrojacNovaIgra { get; set; } = 0;
-        public int BrojacHelp { get; set; } = 0;
-        private int ticks=0;
+        public static int Suma = 0;
+        public string Level = "";
+        public static int BrojacPokusaja = 0; //broj gresaka
+        public List<string> Stringovi;
+        public string RandomRijec= "";
+        public static int BrojPobjeda = 0;
+        public static int BrojacNovaIgra = 0;
+        public int BrojacHelp = 0;
+        private int ticks = 0;
         private bool buttonSentencesClicked = false;
         private bool buttonChallengingClicked = false;
+        private string divRandomSlova = "";
+        private List<string> PogodjeneRijeci = new List<string>();
 
         private void StringoviAdvanced()
         {
@@ -53,7 +61,7 @@ namespace Hangman
         }
         private void StringoviEasy()
         {
-            Stringovi = new List<string>() { "KOCKA", "TELEVIZOR", "OGRLICA", "IGRICA", "MOBITEL", "SLIKA", "ZAVJESA" };
+            Stringovi = new List<string>() { "ŠARM", "KOCKA", "STIH", "MANA", "OSTRVO", "TELEVIZOR", "OGRLICA", "IGRICA", "MOBITEL", "SLIKA", "ZAVJESA" };
         }
         private void StringoviHard()
         {
@@ -67,28 +75,61 @@ namespace Hangman
         {
             var random = new Random();
             int i = random.Next(Stringovi.Count);
-            while (Stringovi[i] == RandomRijec) //da se ne ponavlja dva puta ista RandomRijec
+
+            if (PogodjeneRijeci.Contains(Stringovi[i]))
             {
-                i = random.Next(Stringovi.Count);
+                int x = 0;
+                for (int j = 0; j < Stringovi.Count; j++)
+                {
+                    if (PogodjeneRijeci.Contains(Stringovi[j]))
+                        x++;
+                }
+
+                if (x == Stringovi.Count)
+                    return "";
+                else
+                {
+                    for (int j = 0; j < Stringovi.Count; j++)
+                    {
+                        if (!PogodjeneRijeci.Contains(Stringovi[j]))
+                            return Stringovi[j];
+                    }
+                }
             }
+            //da se ne ponavlja ista rijec dvaput (ali ne radi sada ovaj pristup)
+            //while (Stringovi[i] == RandomRijec) 
+            //{
+            //    i = random.Next(Stringovi.Count);
+            //}
             return Stringovi[i];        
         }
         public void Igranje()
         {
             RandomRijec = BirajRandomRijec();
+
+            if (RandomRijec == "")
+            {
+                OnemoguciUnos();
+                lblPoruka.Text = "Zao nam je... nemamo novih rijeci...";
+            }
+            else
+                Resetuj();
+
             string novi = "";
             for (int i = 0; i < RandomRijec.Length; i++)
             {
-                if (RandomRijec[i] != ' ')
+                if (RandomRijec[i] != ' ' && RandomRijec[i]!=',')
                     novi += "_ ";
-                else
+                else if (RandomRijec[i] == ' ')
                     novi += "  ";
+                else if (RandomRijec[i] == ',')
+                    novi += ", ";
             }
             lblNepoznataRijec.Text = novi;
       
             lblBrojSlova.Text = RandomRijec.Length.ToString();
 
-            if (buttonChallengingClicked == true)
+            if (buttonChallengingClicked == true && RandomRijec != "")
             {
                 ticks = 0;
                 timer1.Enabled = true;
@@ -96,6 +137,12 @@ namespace Hangman
             }
             else
                 timer1.Enabled = false;
+
+            if (buttonSentencesClicked == false)
+            {
+                lblTekstBrojSlova.Show();
+                lblBrojSlova.Show();
+            }
         }
         bool JeLiPogodjenoSlovo()
         {
@@ -130,6 +177,7 @@ namespace Hangman
             {
                 OnemoguciUnos();
                 lblNepoznataRijec.Text = RandomRijec;
+                PogodjeneRijeci.Add(RandomRijec);              
                 return true;
             }
             int k = 0;
@@ -142,6 +190,7 @@ namespace Hangman
             {
                 OnemoguciUnos();
                 lblNepoznataRijec.Text = RandomRijec;
+                PogodjeneRijeci.Add(RandomRijec);               
                 return true;
             } 
             return false;
@@ -228,15 +277,20 @@ namespace Hangman
             BrojacHelp = 0;
             btnHelp.Enabled = true;
             lblBrojacHint.Text = "";
+            divRandomSlova = "";
+            dobijenoPomocnoSlovo = false;
         }
         private void btnNovaIgra_Click(object sender, EventArgs e)
         {
-            BrojacNovaIgra++;
+            if (RandomRijec != "")
+            {
+                BrojacNovaIgra++;
+            }
             if (lblTimer.Text != "OFF")
             {
                 ticks = 0;
                 timer1.Start();
-            }        
+            }      
             Resetuj();
             Igranje();
         }
@@ -245,29 +299,38 @@ namespace Hangman
         {
             new frmRezultat().ShowDialog();
         }
-
+        private bool dobijenoPomocnoSlovo = false;
         private void btnHelp_Click(object sender, EventArgs e)
         {        
             BrojacHelp++;
             lblBrojacHint.Text = BrojacHelp.ToString();
 
             var slovo = RandomSlovo().ToString().ToUpper();
-            if(RandomRijec.Contains(slovo) && !lblNepoznataRijec.Text.Contains(slovo))
+            
+            if (RandomRijec.Contains(slovo) && !lblNepoznataRijec.Text.Contains(slovo) && !divRandomSlova.Contains(slovo))
             {
                 lblHelp.Text = $"Probajte sa slovom: {slovo}";
+                divRandomSlova += slovo;
+                dobijenoPomocnoSlovo = true;
             }
             else
             {
                 lblHelp.Text = "Hint nije dostupan";
             }
-            if (BrojacHelp > 5)
+            if (BrojacHelp > 5 && dobijenoPomocnoSlovo==true)
             {
                 btnHelp.Enabled = false;
                 lblHelp.Text = "Vaših 5 šansi ste iskoristili :/";
-            }            
+            }
+            else if (BrojacHelp > 5 && dobijenoPomocnoSlovo == false)
+            {
+                btnHelp.Enabled = false;
+                lblHelp.Text = "Niste imali sreće :/";
+            }
         }
         private char RandomSlovo()
         {
+            //u ovaj string dodati i nasa slova s kvakama? izbaciti vokale?
             var slova = "abcdefghijklmnoprstuvz";
             var s = new Random().Next(slova.Count());
             return slova[s];
@@ -277,12 +340,14 @@ namespace Hangman
         {
             Igranje();
 
-            if (Level != "adv" && Level!="")
-                Text = $"Level: {Level}";
+            if (Level == "")
+                Text = "Level: Slučajni odabir";
             else if (Level == "adv")
-                Text = "Level: advanced";
-            else if (Level == "")
-                Text = "Level: random";
+                Text = "Level: Teško";
+            else if (Level == "hard")
+                Text = "Level: Malo teže";
+            else if (Level == "easy")
+                Text = "Level: Lagano";
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
@@ -290,7 +355,7 @@ namespace Hangman
             new frmInfo(Level).Show();
         }
         private void Bodovi()
-        {       
+        {            
             if (Level == "easy")
             {
                 if (BrojacPokusaja == 0)
@@ -313,7 +378,7 @@ namespace Hangman
                 else if (BrojacPokusaja == 2)
                     Suma += 9;
                 else if (BrojacPokusaja == 3)
-                    Suma += 6;
+                    Suma += 6;              
             }
             else if (Level == "adv")
             {
@@ -325,10 +390,10 @@ namespace Hangman
                     Suma += 10;
             }
 
-            if(Suma>=20 && Suma<=39 && buttonSentencesClicked == false && buttonChallengingClicked==false) 
+            if (Suma >= 20 && Suma <= 39 && buttonSentencesClicked == false && buttonChallengingClicked == false)
                 Suma += 10;
 
-            if(Level!="")
+            if (Level!="")
                lblBodovi.Text = Suma.ToString();       
         }
         private void EnablebtnChallenging()
@@ -353,19 +418,20 @@ namespace Hangman
         {
             buttonChallengingClicked = true;
             Resetuj();
-            BrojacNovaIgra++;
+            if(RandomRijec != "")
+               ++BrojacNovaIgra;
             switch (Level)
             {
-                case "easy": Stringovi = new List<string>() { "STOLICA", "ZEMLJA", "ISKRENOST", "STATUS" }; break;
-                case "hard": Stringovi = new List<string>() { "TEHNOLOGIJA", "ORANGUTAN", "MINIJATURAN", "SLIKOVITA","BIOSFERA" }; break;
-                case "adv":  Stringovi = new List<string>() { "ADMINISTRATIVAN", "FILANTROPIJA", "HERMAFRODITIZAM", "HIDRATIZACIJA" }; break;
-            }         
-            Igranje();
-            lblUkucaj.Text = "Ukucaj slovo/riječ:";
-            btnChallenging.Enabled = false; 
-            btnNazad.Enabled = true;
+                case "easy": Stringovi = new List<string>() { "STOLICA", "ZEMLJA", "ISKRENOST", "STATUS","LAŽ", "BAJKA", "MUDROST" }; break;
+                case "hard": Stringovi = new List<string>() { "TEHNOLOGIJA", "ORANGUTAN", "MINIJATURAN", "SLIKOVITA","BIOSFERA","RENESANSA" }; break;
+                case "adv":  Stringovi = new List<string>() { "ADMINISTRATIVAN", "FILANTROPIJA", "HERMAFRODITIZAM", "HIDRATIZACIJA","INSTRUKCIJA" }; break;
+            }
             btnSentences.Enabled = true;
             buttonSentencesClicked = false;
+            Igranje();
+            lblUkucaj.Text = "Ukucaj slovo/riječ:";       
+            btnChallenging.Enabled = false; 
+            btnNazad.Enabled = true;         
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -390,10 +456,18 @@ namespace Hangman
             buttonChallengingClicked = false;
             lblTimer.Text = "OFF";
             Resetuj();
-            BrojacNovaIgra++;
-            Stringovi = new List<string>() { "ŽIVOT JE LIJEP", "ISTINSKA RADOST", "STATUS QUO" };
+            if(RandomRijec != "")
+               ++BrojacNovaIgra;
+            switch (Level)
+            {
+                case "easy": Stringovi = new List<string>() { "DJELA, NE RIJEČI", "KOCKA JE BAČENA", "ISKORISTI DAN", "MLADOST LUDOST", "ISKUSTVO POUČAVA", "IZGLED VARA" }; break;
+                case "hard": Stringovi = new List<string>() { "MISLIM, DAKLE JESAM","GRIJEŠITI JE LJUDSKI", "RAD SVE POBJEĐUJE","ISKUSTVO POUČAVA", "UPOZNAJ SEBE SAMOGA", "SREĆA PRATI HRABRE" }; break;
+                case "adv": Stringovi = new List<string>() { "DOĐOH, VIDJEH, POBIJEDIH","KLIN SE KLINOM IZBIJA","DOKOLICA RAĐA POROK","BACATI BISERJE PRED SVINJE", "KA ZVIJEZDAMA U VISINE", "DOK DIŠEM, NADAM SE" }; break;
+            }      
             Igranje();
             lblUkucaj.Text = "Ukucaj slovo/rečenicu:";
+            lblTekstBrojSlova.Hide();
+            lblBrojSlova.Hide();
             btnSentences.Enabled = false;       
         }
 

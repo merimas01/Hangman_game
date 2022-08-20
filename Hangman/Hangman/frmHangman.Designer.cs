@@ -38,9 +38,9 @@ namespace Hangman
             // 
             this.lblPravilaIgre.AutoSize = true;
             this.lblPravilaIgre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPravilaIgre.Location = new System.Drawing.Point(44, 41);
+            this.lblPravilaIgre.Location = new System.Drawing.Point(44, 73);
             this.lblPravilaIgre.Name = "lblPravilaIgre";
-            this.lblPravilaIgre.Size = new System.Drawing.Size(743, 260);
+            this.lblPravilaIgre.Size = new System.Drawing.Size(627, 364);
             this.lblPravilaIgre.TabIndex = 0;
             this.lblPravilaIgre.Text = resources.GetString("lblPravilaIgre.Text");
             // 
@@ -50,7 +50,7 @@ namespace Hangman
             this.btnAgree.BackColor = System.Drawing.Color.LimeGreen;
             this.btnAgree.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnAgree.Location = new System.Drawing.Point(359, 372);
+            this.btnAgree.Location = new System.Drawing.Point(316, 515);
             this.btnAgree.Name = "btnAgree";
             this.btnAgree.Size = new System.Drawing.Size(120, 50);
             this.btnAgree.TabIndex = 2;
@@ -62,7 +62,7 @@ namespace Hangman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 434);
+            this.ClientSize = new System.Drawing.Size(757, 577);
             this.Controls.Add(this.btnAgree);
             this.Controls.Add(this.lblPravilaIgre);
             this.MaximizeBox = false;

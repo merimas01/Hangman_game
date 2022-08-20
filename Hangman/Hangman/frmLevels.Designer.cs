@@ -48,7 +48,7 @@ namespace Hangman
             this.btnEasy.Name = "btnEasy";
             this.btnEasy.Size = new System.Drawing.Size(150, 72);
             this.btnEasy.TabIndex = 0;
-            this.btnEasy.Text = "EASY";
+            this.btnEasy.Text = "Lagano";
             this.btnEasy.UseVisualStyleBackColor = false;
             this.btnEasy.Click += new System.EventHandler(this.btnEasy_Click);
             // 
@@ -60,7 +60,7 @@ namespace Hangman
             this.btnHard.Name = "btnHard";
             this.btnHard.Size = new System.Drawing.Size(150, 72);
             this.btnHard.TabIndex = 1;
-            this.btnHard.Text = "HARD";
+            this.btnHard.Text = "Malo teže";
             this.btnHard.UseVisualStyleBackColor = false;
             this.btnHard.Click += new System.EventHandler(this.btnHard_Click);
             // 
@@ -72,7 +72,7 @@ namespace Hangman
             this.btnAdvanced.Name = "btnAdvanced";
             this.btnAdvanced.Size = new System.Drawing.Size(150, 72);
             this.btnAdvanced.TabIndex = 2;
-            this.btnAdvanced.Text = "ADVANCED";
+            this.btnAdvanced.Text = "Teško";
             this.btnAdvanced.UseVisualStyleBackColor = false;
             this.btnAdvanced.Click += new System.EventHandler(this.btnAdvanced_Click);
             // 
@@ -84,7 +84,7 @@ namespace Hangman
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(147, 72);
             this.btnRandom.TabIndex = 3;
-            this.btnRandom.Text = "RANDOM";
+            this.btnRandom.Text = "Slučajni odabir";
             this.btnRandom.UseVisualStyleBackColor = false;
             this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
