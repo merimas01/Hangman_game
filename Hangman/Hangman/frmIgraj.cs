@@ -52,11 +52,11 @@ namespace Hangman
         }
         private void StringoviEasy()
         {
-            Stringovi = new List<string>() { "ISKRENOST", "KOCKA", "MANA", "OSTRVO","HETEROGEN", "TELEVIZOR","PRIORITET", "OGRLICA", "IGRICA", "MOBITEL", "SLIKA", "ZAVJESA" };
+            Stringovi = new List<string>() { "ISKRENOST", "KOCKA", "MANA", "OSTRVO", "PRIORITET", "TELEVIZOR", "HETEROGEN", "OGRLICA", "IGRICA", "MOBITEL", "SLIKA", "ZAVJESA" };
         }
         private void StringoviHard()
         {
-            Stringovi = new List<string>() { "AUTOGENERISATI", "JEDNOSTAVNOST", "ŠARM", "STIH", "MINIMALIZAM", "PURPURNO", "MIMIKRIJA", "ATAVIZAM", "LAŽ", "RATIFIKOVATI", "PALINDROM","PLEONAZAM" };
+            Stringovi = new List<string>() { "AUTOGENERISATI", "ŠARM", "STIH", "MINIMALIZAM","PURPURNO", "MIMIKRIJA", "LAŽ", "ATAVIZAM", "RATIFIKOVATI", "PALINDROM","PLEONAZAM" };
         }
         string BirajRandomRijec()
         {

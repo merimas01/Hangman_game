@@ -44,15 +44,15 @@ namespace Hangman
                 lblPravila.Text = "Imate 5 dozvoljenih puta da pogriješite." + Environment.NewLine +
                     "Klikom na Pomoć možete da dobijete max 2 pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena u datoj riječi)." + Environment.NewLine +
                     "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje. " + Environment.NewLine +
-                    "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine+
+                    "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine +
                     "BODOVANJE: Ako ostvarite 20+ bodova, dobijate dodatnih 5 bodova." + Environment.NewLine +
-                    "Ako osvojite 30+ bodova, moći ćete pristupiti opciji " + Environment.NewLine+
-                    ">>LATINSKE IZREKE<< u kojoj ćete imati priliku pokušati pogoditi nekolike rečenice. Bodovanje se " + Environment.NewLine+
-                    "nastavlja i za svaku pogođenu rečenicu dobijate određeni broj bodova."+ Environment.NewLine +
+                    "Ako osvojite 30+ bodova, moći ćete pristupiti opciji " + Environment.NewLine +
+                    ">>LATINSKE IZREKE<< u kojoj ćete imati priliku pokušati pogoditi nekolike rečenice. Bodovanje se " + Environment.NewLine +
+                    "nastavlja i za svaku pogođenu rečenicu dobijate određeni broj bodova." + Environment.NewLine +
                     "Ako osvojite 40+ bodova, moći ćete pristupiti opciji" + Environment.NewLine +
-                    ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ" +Environment.NewLine+ Environment.NewLine+
+                    ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ" + Environment.NewLine + Environment.NewLine +
                     "NAPOMENA: Bodovi Vam se neće smanjiti ukoliko ste koristili pomoćno slovo :)" + Environment.NewLine + Environment.NewLine +
-                    "PRINCIP BODOVANJA: " + Environment.NewLine+ 
+                    "PRINCIP BODOVANJA: " + Environment.NewLine +
                     "Broj grešaka: 0 -> Bodovi: 10" + Environment.NewLine +
                     "Broj grešaka: 1 -> Bodovi: 8" + Environment.NewLine +
                     "Broj grešaka: 2 -> Bodovi: 6" + Environment.NewLine +
@@ -67,13 +67,13 @@ namespace Hangman
                 lblPravila.Text = "Imate 4 dozvoljena puta da pogriješite." + Environment.NewLine +
                     "Klikom na Pomoć možete da dobijete max 3 pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena u datoj riječi)." + Environment.NewLine +
                     "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje. " + Environment.NewLine +
-                    "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine+
-                    "BODOVANJE: Ako ostvarite 20+ bodova, dobijate dodatnih 5 bodova." + Environment.NewLine+
+                    "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine +
+                    "BODOVANJE: Ako ostvarite 20+ bodova, dobijate dodatnih 5 bodova." + Environment.NewLine +
                     "Ako osvojite 25+ bodova, moći ćete pristupiti opciji " + Environment.NewLine +
                     ">>LATINSKE IZREKE<< u kojoj ćete imati priliku pokušati pogoditi nekolike rečenice. Bodovanje se " + Environment.NewLine +
                     "nastavlja i za svaku pogođenu rečenicu dobijate određeni broj bodova." + Environment.NewLine +
                     "Ako osvojite 35+ bodova, moći ćete pristupiti opciji" + Environment.NewLine +
-                    ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ i 4 puta da pogriješite." + Environment.NewLine + Environment.NewLine+
+                    ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ i 4 puta da pogriješite." + Environment.NewLine + Environment.NewLine +
                     "NAPOMENA: Bodovi Vam se neće smanjiti ukoliko ste koristili pomoćno slovo :)" + Environment.NewLine + Environment.NewLine +
                      "PRINCIP BODOVANJA: " + Environment.NewLine +
                     "Broj grešaka: 0 -> Bodovi: 15" + Environment.NewLine +
@@ -82,30 +82,29 @@ namespace Hangman
                     "Broj grešaka: 3 -> Bodovi: 6" + Environment.NewLine +
                     "Bodove dobivate ukoliko pogodite datu riječ/rečenicu." + Environment.NewLine + Environment.NewLine +
                     "Igranje možete prekinuti kada god želite." + Environment.NewLine + Environment.NewLine +
-                    "SRETNO!"; 
+                    "SRETNO!";
             }
             else if (lvl == "adv")
             {
                 lblPravila.Text = "Imate 3 dozvoljena puta da pogriješite." + Environment.NewLine +
                        "Klikom na Pomoć možete da dobijete max 3 pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena u datoj riječi)." + Environment.NewLine +
                        "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje. " + Environment.NewLine +
-                       "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine+
+                       "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine +
                        "BODOVANJE: Ako ostvarite 20+ bodova, dobijate dodatnih 5 bodova." + Environment.NewLine +
                        "Ako osvojite 20+ bodova, moći ćete pristupiti opciji " + Environment.NewLine +
                        ">>LATINSKE IZREKE<< u kojoj ćete imati priliku pokušati pogoditi nekolike rečenice. Bodovanje se " + Environment.NewLine +
                        "nastavlja i za svaku pogođenu rečenicu dobijate određeni broj bodova." + Environment.NewLine +
                        "Ako osvojite 30+ bodova, moći ćete pristupiti opciji" + Environment.NewLine +
-                       ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ i 3 puta da pogriješite." + Environment.NewLine + Environment.NewLine+
+                       ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ i 3 puta da pogriješite." + Environment.NewLine + Environment.NewLine +
                        "NAPOMENA: Bodovi Vam se neće smanjiti ukoliko ste koristili pomoćno slovo :)" + Environment.NewLine + Environment.NewLine +
                        "PRINCIP BODOVANJA: " + Environment.NewLine +
                        "Broj grešaka: 0 -> Bodovi: 20" + Environment.NewLine +
                        "Broj grešaka: 1 -> Bodovi: 15" + Environment.NewLine +
-                       "Broj grešaka: 2 -> Bodovi: 10" + Environment.NewLine + 
+                       "Broj grešaka: 2 -> Bodovi: 10" + Environment.NewLine +
                        "Bodove dobivate ukoliko pogodite datu riječ/rečenicu." + Environment.NewLine + Environment.NewLine +
                        "Igranje možete prekinuti kada god želite." + Environment.NewLine + Environment.NewLine +
-                       "SRETNO!"; 
+                       "SRETNO!";
             }
-            
         }
     }
 }

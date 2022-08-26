@@ -45,7 +45,6 @@ namespace Hangman
                 poruka = "Sjajan rezultat!";
             else if (procenat > 90 && procenat <= 100)
                 poruka = "Odličan rezultat! Čestitamo!";
-
             lblTekst.Text += poruka + Environment.NewLine;
         }
     }
