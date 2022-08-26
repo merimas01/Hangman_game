@@ -50,17 +50,18 @@ namespace Hangman
             this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
             this.lblBrojacHint = new System.Windows.Forms.Label();
             this.btnChallenging = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnSentences = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTimerText = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
             this.btnNazad = new System.Windows.Forms.Button();
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.lblBodovi = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblBodoviText = new System.Windows.Forms.Label();
             this.lblBrojSlova = new System.Windows.Forms.Label();
-            this.lblTekstBrojSlova = new System.Windows.Forms.Label();
+            this.lblBrojSlovaText = new System.Windows.Forms.Label();
+            this.btnMode = new System.Windows.Forms.Button();
+            this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lblPogodiRijec
@@ -68,7 +69,7 @@ namespace Hangman
             this.lblPogodiRijec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblPogodiRijec.AutoSize = true;
             this.lblPogodiRijec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblPogodiRijec.Location = new System.Drawing.Point(37, 130);
+            this.lblPogodiRijec.Location = new System.Drawing.Point(107, 185);
             this.lblPogodiRijec.Name = "lblPogodiRijec";
             this.lblPogodiRijec.Size = new System.Drawing.Size(147, 25);
             this.lblPogodiRijec.TabIndex = 0;
@@ -79,7 +80,7 @@ namespace Hangman
             this.lblNepoznataRijec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNepoznataRijec.AutoSize = true;
             this.lblNepoznataRijec.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblNepoznataRijec.Location = new System.Drawing.Point(267, 115);
+            this.lblNepoznataRijec.Location = new System.Drawing.Point(392, 171);
             this.lblNepoznataRijec.Name = "lblNepoznataRijec";
             this.lblNepoznataRijec.Size = new System.Drawing.Size(0, 39);
             this.lblNepoznataRijec.TabIndex = 1;
@@ -89,7 +90,7 @@ namespace Hangman
             this.lblPokusaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblPokusaj.AutoSize = true;
             this.lblPokusaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblPokusaj.Location = new System.Drawing.Point(37, 308);
+            this.lblPokusaj.Location = new System.Drawing.Point(107, 363);
             this.lblPokusaj.Name = "lblPokusaj";
             this.lblPokusaj.Size = new System.Drawing.Size(132, 25);
             this.lblPokusaj.TabIndex = 2;
@@ -100,7 +101,7 @@ namespace Hangman
             this.lblBrojacPokusaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblBrojacPokusaja.AutoSize = true;
             this.lblBrojacPokusaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblBrojacPokusaja.Location = new System.Drawing.Point(224, 308);
+            this.lblBrojacPokusaja.Location = new System.Drawing.Point(394, 363);
             this.lblBrojacPokusaja.Name = "lblBrojacPokusaja";
             this.lblBrojacPokusaja.Size = new System.Drawing.Size(0, 25);
             this.lblBrojacPokusaja.TabIndex = 3;
@@ -109,10 +110,11 @@ namespace Hangman
             // 
             this.txtUnos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUnos.BackColor = System.Drawing.SystemColors.Window;
             this.txtUnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtUnos.Location = new System.Drawing.Point(274, 214);
+            this.txtUnos.Location = new System.Drawing.Point(389, 269);
             this.txtUnos.Name = "txtUnos";
-            this.txtUnos.Size = new System.Drawing.Size(444, 30);
+            this.txtUnos.Size = new System.Drawing.Size(420, 30);
             this.txtUnos.TabIndex = 5;
             // 
             // lblUkucaj
@@ -120,7 +122,7 @@ namespace Hangman
             this.lblUkucaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblUkucaj.AutoSize = true;
             this.lblUkucaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblUkucaj.Location = new System.Drawing.Point(37, 217);
+            this.lblUkucaj.Location = new System.Drawing.Point(107, 272);
             this.lblUkucaj.Name = "lblUkucaj";
             this.lblUkucaj.Size = new System.Drawing.Size(170, 25);
             this.lblUkucaj.TabIndex = 6;
@@ -132,8 +134,8 @@ namespace Hangman
             this.lblPoruka.AutoSize = true;
             this.lblPoruka.BackColor = System.Drawing.Color.White;
             this.lblPoruka.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblPoruka.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblPoruka.Location = new System.Drawing.Point(37, 383);
+            this.lblPoruka.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblPoruka.Location = new System.Drawing.Point(37, 590);
             this.lblPoruka.Name = "lblPoruka";
             this.lblPoruka.Size = new System.Drawing.Size(0, 29);
             this.lblPoruka.TabIndex = 7;
@@ -144,11 +146,11 @@ namespace Hangman
             this.btnPotvrdi.BackColor = System.Drawing.Color.MintCream;
             this.btnPotvrdi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPotvrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnPotvrdi.Location = new System.Drawing.Point(753, 211);
+            this.btnPotvrdi.Location = new System.Drawing.Point(834, 266);
             this.btnPotvrdi.Name = "btnPotvrdi";
-            this.btnPotvrdi.Size = new System.Drawing.Size(93, 40);
+            this.btnPotvrdi.Size = new System.Drawing.Size(61, 40);
             this.btnPotvrdi.TabIndex = 8;
-            this.btnPotvrdi.Text = "Potvrdi";
+            this.btnPotvrdi.Text = "OK";
             this.toolTip4.SetToolTip(this.btnPotvrdi, "potvrdite unos");
             this.btnPotvrdi.UseVisualStyleBackColor = false;
             this.btnPotvrdi.Click += new System.EventHandler(this.btnPotvrdi_Click);
@@ -160,12 +162,12 @@ namespace Hangman
             this.btnNovaIgra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovaIgra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovaIgra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNovaIgra.Location = new System.Drawing.Point(783, 384);
+            this.btnNovaIgra.Location = new System.Drawing.Point(1018, 608);
             this.btnNovaIgra.Name = "btnNovaIgra";
-            this.btnNovaIgra.Size = new System.Drawing.Size(117, 47);
+            this.btnNovaIgra.Size = new System.Drawing.Size(132, 47);
             this.btnNovaIgra.TabIndex = 9;
-            this.btnNovaIgra.Text = "Nova igra";
-            this.toolTip5.SetToolTip(this.btnNovaIgra, "započnite novu igru");
+            this.btnNovaIgra.Text = "Nova riječ";
+            this.toolTip5.SetToolTip(this.btnNovaIgra, "prebacite na slijedeću riječ");
             this.btnNovaIgra.UseVisualStyleBackColor = false;
             this.btnNovaIgra.Click += new System.EventHandler(this.btnNovaIgra_Click);
             // 
@@ -176,7 +178,7 @@ namespace Hangman
             this.btnScore.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnScore.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnScore.Location = new System.Drawing.Point(906, 383);
+            this.btnScore.Location = new System.Drawing.Point(1161, 608);
             this.btnScore.Name = "btnScore";
             this.btnScore.Size = new System.Drawing.Size(117, 47);
             this.btnScore.TabIndex = 11;
@@ -187,47 +189,56 @@ namespace Hangman
             // 
             // btnHelp
             // 
-            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHelp.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnHelp.Location = new System.Drawing.Point(1086, 17);
+            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHelp.BackColor = System.Drawing.Color.MintCream;
+            this.btnHelp.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnHelp.FlatAppearance.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnHelp.FlatAppearance.BorderSize = 50;
+            this.btnHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnHelp.Location = new System.Drawing.Point(112, 458);
             this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(73, 34);
+            this.btnHelp.Size = new System.Drawing.Size(73, 44);
             this.btnHelp.TabIndex = 12;
-            this.btnHelp.Text = "Pomoc";
+            this.btnHelp.Text = "Pomoć";
             this.toolTip3.SetToolTip(this.btnHelp, "kliknite da dobijete pomoćno slovo");
             this.btnHelp.UseVisualStyleBackColor = false;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // lblHelp
             // 
-            this.lblHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHelp.Location = new System.Drawing.Point(941, 64);
+            this.lblHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHelp.Location = new System.Drawing.Point(109, 514);
             this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(222, 20);
+            this.lblHelp.Size = new System.Drawing.Size(256, 24);
             this.lblHelp.TabIndex = 13;
-            this.lblHelp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnInfo
             // 
             this.btnInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInfo.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfo.Location = new System.Drawing.Point(1031, 17);
+            this.btnInfo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfo.Location = new System.Drawing.Point(1203, 16);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(49, 34);
+            this.btnInfo.Size = new System.Drawing.Size(75, 34);
             this.btnInfo.TabIndex = 14;
-            this.btnInfo.Text = "Info";
-            this.toolTip2.SetToolTip(this.btnInfo, "info");
+            this.btnInfo.Text = "INFO";
+            this.toolTip2.SetToolTip(this.btnInfo, "pravila igre");
             this.btnInfo.UseVisualStyleBackColor = false;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // lblBrojacHint
             // 
-            this.lblBrojacHint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBrojacHint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblBrojacHint.AutoSize = true;
             this.lblBrojacHint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrojacHint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblBrojacHint.Location = new System.Drawing.Point(1165, 17);
+            this.lblBrojacHint.ForeColor = System.Drawing.Color.Black;
+            this.lblBrojacHint.Location = new System.Drawing.Point(203, 469);
             this.lblBrojacHint.Name = "lblBrojacHint";
             this.lblBrojacHint.Size = new System.Drawing.Size(0, 20);
             this.lblBrojacHint.TabIndex = 15;
@@ -235,26 +246,18 @@ namespace Hangman
             // btnChallenging
             // 
             this.btnChallenging.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChallenging.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnChallenging.BackColor = System.Drawing.Color.Gainsboro;
             this.btnChallenging.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChallenging.Enabled = false;
+            this.btnChallenging.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.btnChallenging.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChallenging.Location = new System.Drawing.Point(1055, 333);
+            this.btnChallenging.Location = new System.Drawing.Point(1096, 330);
             this.btnChallenging.Name = "btnChallenging";
-            this.btnChallenging.Size = new System.Drawing.Size(126, 110);
+            this.btnChallenging.Size = new System.Drawing.Size(182, 110);
             this.btnChallenging.TabIndex = 23;
             this.btnChallenging.Text = "IZAZOVI SE";
             this.btnChallenging.UseVisualStyleBackColor = false;
             this.btnChallenging.Click += new System.EventHandler(this.btnChallenging_Click);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(1041, 224);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(2, 219);
-            this.label3.TabIndex = 24;
             // 
             // timer1
             // 
@@ -264,28 +267,28 @@ namespace Hangman
             // btnSentences
             // 
             this.btnSentences.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSentences.BackColor = System.Drawing.Color.Gold;
+            this.btnSentences.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSentences.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSentences.Enabled = false;
             this.btnSentences.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSentences.Location = new System.Drawing.Point(1055, 223);
+            this.btnSentences.Location = new System.Drawing.Point(1096, 196);
             this.btnSentences.Name = "btnSentences";
-            this.btnSentences.Size = new System.Drawing.Size(126, 110);
+            this.btnSentences.Size = new System.Drawing.Size(182, 110);
             this.btnSentences.TabIndex = 25;
             this.btnSentences.Text = "LATINSKE IZREKE";
             this.btnSentences.UseVisualStyleBackColor = false;
             this.btnSentences.Click += new System.EventHandler(this.btnSentences_Click);
             // 
-            // label4
+            // lblTimerText
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(889, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 20);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Timer:";
+            this.lblTimerText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTimerText.AutoSize = true;
+            this.lblTimerText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimerText.Location = new System.Drawing.Point(385, 16);
+            this.lblTimerText.Name = "lblTimerText";
+            this.lblTimerText.Size = new System.Drawing.Size(63, 20);
+            this.lblTimerText.TabIndex = 26;
+            this.lblTimerText.Text = "Timer:";
             // 
             // lblTimer
             // 
@@ -293,7 +296,7 @@ namespace Hangman
             this.lblTimer.AutoSize = true;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimer.ForeColor = System.Drawing.Color.Red;
-            this.lblTimer.Location = new System.Drawing.Point(959, 23);
+            this.lblTimer.Location = new System.Drawing.Point(455, 16);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(45, 20);
             this.lblTimer.TabIndex = 27;
@@ -317,63 +320,79 @@ namespace Hangman
             // 
             // lblBodovi
             // 
-            this.lblBodovi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBodovi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBodovi.AutoSize = true;
             this.lblBodovi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBodovi.Location = new System.Drawing.Point(724, 397);
+            this.lblBodovi.Location = new System.Drawing.Point(889, 16);
             this.lblBodovi.Name = "lblBodovi";
             this.lblBodovi.Size = new System.Drawing.Size(16, 20);
             this.lblBodovi.TabIndex = 32;
             this.lblBodovi.Text = "-";
             // 
-            // label2
+            // lblBodoviText
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(653, 397);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Bodovi:";
+            this.lblBodoviText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBodoviText.AutoSize = true;
+            this.lblBodoviText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBodoviText.Location = new System.Drawing.Point(805, 16);
+            this.lblBodoviText.Name = "lblBodoviText";
+            this.lblBodoviText.Size = new System.Drawing.Size(65, 20);
+            this.lblBodoviText.TabIndex = 31;
+            this.lblBodoviText.Text = "Bodovi:";
             // 
             // lblBrojSlova
             // 
-            this.lblBrojSlova.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBrojSlova.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBrojSlova.AutoSize = true;
             this.lblBrojSlova.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrojSlova.Location = new System.Drawing.Point(988, 221);
+            this.lblBrojSlova.Location = new System.Drawing.Point(687, 16);
             this.lblBrojSlova.Name = "lblBrojSlova";
             this.lblBrojSlova.Size = new System.Drawing.Size(16, 20);
             this.lblBrojSlova.TabIndex = 30;
             this.lblBrojSlova.Text = "-";
             // 
-            // lblTekstBrojSlova
+            // lblBrojSlovaText
             // 
-            this.lblTekstBrojSlova.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTekstBrojSlova.AutoSize = true;
-            this.lblTekstBrojSlova.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTekstBrojSlova.Location = new System.Drawing.Point(889, 221);
-            this.lblTekstBrojSlova.Name = "lblTekstBrojSlova";
-            this.lblTekstBrojSlova.Size = new System.Drawing.Size(89, 20);
-            this.lblTekstBrojSlova.TabIndex = 29;
-            this.lblTekstBrojSlova.Text = "Broj slova:";
+            this.lblBrojSlovaText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBrojSlovaText.AutoSize = true;
+            this.lblBrojSlovaText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrojSlovaText.Location = new System.Drawing.Point(588, 16);
+            this.lblBrojSlovaText.Name = "lblBrojSlovaText";
+            this.lblBrojSlovaText.Size = new System.Drawing.Size(89, 20);
+            this.lblBrojSlovaText.TabIndex = 29;
+            this.lblBrojSlovaText.Text = "Broj slova:";
+            // 
+            // btnMode
+            // 
+            this.btnMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMode.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMode.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnMode.Location = new System.Drawing.Point(1203, 66);
+            this.btnMode.Name = "btnMode";
+            this.btnMode.Size = new System.Drawing.Size(75, 35);
+            this.btnMode.TabIndex = 33;
+            this.btnMode.Text = "LIGHT";
+            this.toolTip7.SetToolTip(this.btnMode, "light/dark mode");
+            this.btnMode.UseVisualStyleBackColor = false;
+            this.btnMode.Click += new System.EventHandler(this.btnMode_Click);
             // 
             // frmIgraj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(1208, 454);
+            this.BackColor = System.Drawing.Color.SeaShell;
+            this.ClientSize = new System.Drawing.Size(1315, 667);
+            this.Controls.Add(this.btnMode);
             this.Controls.Add(this.lblBodovi);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblBodoviText);
             this.Controls.Add(this.lblBrojSlova);
-            this.Controls.Add(this.lblTekstBrojSlova);
+            this.Controls.Add(this.lblBrojSlovaText);
             this.Controls.Add(this.btnNazad);
             this.Controls.Add(this.lblTimer);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblTimerText);
             this.Controls.Add(this.btnSentences);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnChallenging);
             this.Controls.Add(this.lblBrojacHint);
             this.Controls.Add(this.btnInfo);
@@ -421,16 +440,17 @@ namespace Hangman
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.Label lblBrojacHint;
         private System.Windows.Forms.Button btnChallenging;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnSentences;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTimerText;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Button btnNazad;
         private System.Windows.Forms.ToolTip toolTip6;
         private System.Windows.Forms.Label lblBodovi;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblBodoviText;
         private System.Windows.Forms.Label lblBrojSlova;
-        private System.Windows.Forms.Label lblTekstBrojSlova;
+        private System.Windows.Forms.Label lblBrojSlovaText;
+        private System.Windows.Forms.Button btnMode;
+        private System.Windows.Forms.ToolTip toolTip7;
     }
 }

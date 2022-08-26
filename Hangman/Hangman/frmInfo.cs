@@ -21,6 +21,18 @@ namespace Hangman
 
         private void frmInfo_Load(object sender, EventArgs e)
         {
+            if (frmIgraj.brojKlikanja % 2 != 0)
+            {
+                this.BackColor = Color.Black;
+                lblPravila.ForeColor = Color.White;
+                lblNaslov.ForeColor = Color.White;
+            }
+            else
+            {
+                this.BackColor = Color.SeaShell;
+                lblPravila.ForeColor = Color.Black;
+                lblNaslov.ForeColor = Color.Black;
+            }
             UcitajInformacije();
         }
 
@@ -30,14 +42,14 @@ namespace Hangman
             if (lvl == "easy")
             {
                 lblPravila.Text = "Imate 5 dozvoljenih puta da pogriješite." + Environment.NewLine +
-                    "Klikom na Help možete da dobijete pomoćno slovo (imate 5 šansi za to)." + Environment.NewLine +
-                    "Klikom na Nova igra započinjete novu igru. " + Environment.NewLine +
-                    "Klikom na Score, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine +
-                    "BODOVANJE: Ako ostvarite 20 i više bodova, dobijate dodatnih 10 bodova." + Environment.NewLine +
-                    "Ako osvojite 30 bodova i više na levelu EASY, moći ćete pristupiti opciji " + Environment.NewLine+
+                    "Klikom na Pomoć možete da pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena)." + Environment.NewLine +
+                    "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje " + Environment.NewLine +
+                    "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine +
+                    "BODOVANJE: Ako ostvarite 20 i više bodova, dobijate dodatnih 5 bodova." + Environment.NewLine +
+                    "Ako osvojite 30 bodova i više, moći ćete pristupiti opciji " + Environment.NewLine+
                     ">>LATINSKE IZREKE<< u kojoj ćete imati priliku pokušati pogoditi nekolike rečenice. Bodovanje se " + Environment.NewLine+
                     "nastavlja i za svaku pogođenu rečenicu dobijate određeni broj bodova."+ Environment.NewLine +
-                    "Ako osvojite 40 bodova i više na levelu EASY, moći ćete pristupiti opciji" + Environment.NewLine +
+                    "Ako osvojite 40 bodova i više, moći ćete pristupiti opciji" + Environment.NewLine +
                     ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ" +Environment.NewLine+
                     "NAPOMENA: Bodovi Vam se neće smanjiti ukoliko ste koristili pomoćno slovo :)" + Environment.NewLine + Environment.NewLine +
                     "PRINCIP BODOVANJA: " + Environment.NewLine+ 
@@ -53,14 +65,14 @@ namespace Hangman
             else if (lvl == "hard")
             {
                 lblPravila.Text = "Imate 4 dozvoljena puta da pogriješite." + Environment.NewLine +
-                    "Klikom na Help možete da dobijete pomoćno slovo (imate 5 šansi za to)." + Environment.NewLine +
-                    "Klikom na Nova igra započinjete novu igru. " + Environment.NewLine +
-                    "Klikom na Score, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine+
-                    "BODOVANJE: Ako ostvarite 20 i više bodova, dobijate dodatnih 10 bodova." + Environment.NewLine+
-                    "Ako osvojite 25 bodova i više na levelu HARD, moći ćete pristupiti opciji " + Environment.NewLine +
+                    "Klikom na Pomoć možete da pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena)." + Environment.NewLine +
+                    "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje " + Environment.NewLine +
+                    "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine +
+                    "BODOVANJE: Ako ostvarite 20 i više bodova, dobijate dodatnih 5 bodova." + Environment.NewLine+
+                    "Ako osvojite 25 bodova i više, moći ćete pristupiti opciji " + Environment.NewLine +
                     ">>LATINSKE IZREKE<< u kojoj ćete imati priliku pokušati pogoditi nekolike rečenice. Bodovanje se " + Environment.NewLine +
                     "nastavlja i za svaku pogođenu rečenicu dobijate određeni broj bodova." + Environment.NewLine +
-                    "Ako osvojite 35 bodova i više na levelu HARD, moći ćete pristupiti opciji" + Environment.NewLine +
+                    "Ako osvojite 35 bodova i više, moći ćete pristupiti opciji" + Environment.NewLine +
                     ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ i 4 puta da pogriješite." + Environment.NewLine +
                     "NAPOMENA: Bodovi Vam se neće smanjiti ukoliko ste koristili pomoćno slovo :)" + Environment.NewLine + Environment.NewLine +
                      "PRINCIP BODOVANJA: " + Environment.NewLine +
@@ -75,14 +87,14 @@ namespace Hangman
             else if (lvl == "adv")
             {
                 lblPravila.Text = "Imate 3 dozvoljena puta da pogriješite." + Environment.NewLine +
-                       "Klikom na Help možete da dobijete pomoćno slovo (imate 5 šansi za to)." + Environment.NewLine +
-                       "Klikom na Nova igra započinjete novu igru. " + Environment.NewLine +
-                       "Klikom na Score, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine +
-                       "BODOVANJE: Ako ostvarite 20 i više bodova, dobijate dodatnih 10 bodova." + Environment.NewLine +
-                       "Ako osvojite 20 bodova i više na levelu ADVANCED, moći ćete pristupiti opciji " + Environment.NewLine +
+                       "Klikom na Pomoć možete da pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena)." + Environment.NewLine +
+                       "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje " + Environment.NewLine +
+                       "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine +
+                       "BODOVANJE: Ako ostvarite 20 i više bodova, dobijate dodatnih 5 bodova." + Environment.NewLine +
+                       "Ako osvojite 20 bodova i više, moći ćete pristupiti opciji " + Environment.NewLine +
                        ">>LATINSKE IZREKE<< u kojoj ćete imati priliku pokušati pogoditi nekolike rečenice. Bodovanje se " + Environment.NewLine +
                        "nastavlja i za svaku pogođenu rečenicu dobijate određeni broj bodova." + Environment.NewLine +
-                       "Ako osvojite 30 bodova i više na levelu ADVANCED, moći ćete pristupiti opciji" + Environment.NewLine +
+                       "Ako osvojite 30 bodova i više, moći ćete pristupiti opciji" + Environment.NewLine +
                        ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ i 3 puta da pogriješite." + Environment.NewLine +
                        "NAPOMENA: Bodovi Vam se neće smanjiti ukoliko ste koristili pomoćno slovo :)" + Environment.NewLine + Environment.NewLine +
                        "PRINCIP BODOVANJA: " + Environment.NewLine +
@@ -93,19 +105,7 @@ namespace Hangman
                        "Igranje možete prekinuti kada god želite." + Environment.NewLine + Environment.NewLine +
                        "SRETNO!"; 
             }
-            else if (lvl == "")
-            {
-                lblPravila.Text = "Ako je dužina riječi manja od 10 broj dozvoljenih puta da pogriješite" + 
-                    "je 5, u suprotnom je 3." + Environment.NewLine +
-                       "Klikom na Help možete da dobijete pomoćno slovo (imate 5 šansi za to)." + Environment.NewLine +
-                       "Klikom na Nova igra započinjete novu igru. " + Environment.NewLine +
-                       "Klikom na Score, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine +
-                       "VAŽNO: U ovom levelu NEMA BODOVANJA, pa tako ni nemate šanse da pristupite opcijama " + Environment.NewLine+
-                       "LATINSKE IZREKE i IZAZOVI SE." + Environment.NewLine + Environment.NewLine +
-                       "Igranje možete prekinuti kada god želite." + Environment.NewLine + Environment.NewLine +
-                       "**Ovaj level može da služi za warming up :D" + Environment.NewLine+Environment.NewLine+
-                       "SRETNO!";
-            }
+            
         }
     }
 }
