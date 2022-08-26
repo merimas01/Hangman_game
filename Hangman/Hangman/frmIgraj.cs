@@ -48,15 +48,15 @@ namespace Hangman
 
         private void StringoviAdvanced()
         {
-            Stringovi = new List<string>() { "AUTOREFERENCIJALNOST", "NEKONVENCIJALNOST", "NEZAINTERESIRANOST", "PLUSKVAMPERFEKT", "ZLOUPOTRIJEBITI", "DISKVALIFIKOVATI" };
+            Stringovi = new List<string>() { "AUTOREFERENCIJALNOST", "NEKONVENCIJALNOST", "SUVERENITET", "NEZAINTERESIRANOST", "PLUSKVAMPERFEKT", "ZLOUPOTRIJEBITI", "DISKVALIFIKOVATI" };
         }
         private void StringoviEasy()
         {
-            Stringovi = new List<string>() { "ŠARM", "KOCKA", "STIH", "MANA", "OSTRVO", "TELEVIZOR", "OGRLICA", "IGRICA", "MOBITEL", "SLIKA", "ZAVJESA" };
+            Stringovi = new List<string>() { "ISKRENOST", "KOCKA", "MANA", "OSTRVO","HETEROGEN", "TELEVIZOR","PRIORITET", "OGRLICA", "IGRICA", "MOBITEL", "SLIKA", "ZAVJESA" };
         }
         private void StringoviHard()
         {
-            Stringovi = new List<string>() { "AUTOGENERISATI", "PURPURNO", "MIMIKRIJA", "ATAVIZAM", "RATIFIKOVATI", "PALINDROM" };
+            Stringovi = new List<string>() { "AUTOGENERISATI", "JEDNOSTAVNOST", "ŠARM", "STIH", "MINIMALIZAM", "PURPURNO", "MIMIKRIJA", "ATAVIZAM", "LAŽ", "RATIFIKOVATI", "PALINDROM","PLEONAZAM" };
         }
         string BirajRandomRijec()
         {
@@ -200,10 +200,6 @@ namespace Hangman
                     txtUnos.Text = "";
                     ++BrojacPokusaja;
                     lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
-                    //if ((Level == "easy" && BrojacPokusaja == 4) || (Level == "hard" && BrojacPokusaja == 3) || (Level == "adv" && BrojacPokusaja == 2))
-                    //{
-                    //    btnHelp.Enabled = true;
-                    //}
                 } 
                 if (JeLiPogodjenoSlovo())
                 {
@@ -314,10 +310,6 @@ namespace Hangman
         {
             BrojacHelp++;
             lblBrojacHint.Text = BrojacHelp.ToString();
-
-            //trebam postaviti limit za max broj pomocnih slova
-            //ako je velicina rijeci >= 10, max broj pomocnih slova je npr 3
-            //ako je velicina rijeci >=6 and <10 max broj je 2
 
             var slovo = RandomSlovo().ToString().ToUpper();
 

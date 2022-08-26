@@ -36,7 +36,7 @@ namespace Hangman
                 $"Vaš ukupan procenat uspjeha je {procenat}%."+Environment.NewLine+Environment.NewLine;
 
             if (procenat == 0)
-                poruka = "Trebate imati malo više koncentracije...";
+                poruka = "Ajmo malo to bolje!";
             else if (procenat > 0 && procenat <= 30)
                 poruka = "Dobar rezultat ali možete Vi i bolje ;)";
             else if (procenat > 30 && procenat <= 60)
@@ -45,6 +45,7 @@ namespace Hangman
                 poruka = "Sjajan rezultat!";
             else if (procenat > 90 && procenat <= 100)
                 poruka = "Odličan rezultat! Čestitamo!";
+
             lblTekst.Text += poruka + Environment.NewLine;
         }
     }
