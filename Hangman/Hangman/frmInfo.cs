@@ -42,6 +42,7 @@ namespace Hangman
             if (lvl == "easy")
             {
                 lblPravila.Text = "Imate 5 dozvoljenih puta da pogriješite." + Environment.NewLine +
+                    "Koristite i naše dijakritičke znakove (č,ć,ž,đ,š)."+Environment.NewLine+
                     "Klikom na Pomoć možete da dobijete max 2 pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena u datoj riječi)." + Environment.NewLine +
                     "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje. " + Environment.NewLine +
                     "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine +
@@ -65,6 +66,7 @@ namespace Hangman
             else if (lvl == "hard")
             {
                 lblPravila.Text = "Imate 4 dozvoljena puta da pogriješite." + Environment.NewLine +
+                    "Koristite i naše dijakritičke znakove (č,ć,ž,đ,š)." + Environment.NewLine +
                     "Klikom na Pomoć možete da dobijete max 3 pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena u datoj riječi)." + Environment.NewLine +
                     "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje. " + Environment.NewLine +
                     "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine +
@@ -87,6 +89,7 @@ namespace Hangman
             else if (lvl == "adv")
             {
                 lblPravila.Text = "Imate 3 dozvoljena puta da pogriješite." + Environment.NewLine +
+                       "Koristite i naše dijakritičke znakove (č,ć,ž,đ,š)." + Environment.NewLine +
                        "Klikom na Pomoć možete da dobijete max 3 pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena u datoj riječi)." + Environment.NewLine +
                        "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje. " + Environment.NewLine +
                        "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine +
