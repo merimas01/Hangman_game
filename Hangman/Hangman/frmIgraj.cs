@@ -348,6 +348,7 @@ namespace Hangman
 
         private int pogodjenaSlova = 0;
         private int nepogodjenaSlova = 0;
+
         private void OmoguciBtnHelp()
         {
             int k = 0;
@@ -360,7 +361,7 @@ namespace Hangman
                 k++;
             }
 
-            if ((RandomRijec.Length >= 10 && BrojacHelp < 3) || (RandomRijec.Length >= 6 && RandomRijec.Length < 10 && BrojacHelp < 2))
+            if ((Level == "easy" && BrojacHelp < 2) || (Level=="hard" && BrojacHelp < 3) || (Level=="adv" && BrojacHelp < 3))
             {
                 if ((nepogodjenaSlova >= 4 && pogodjenaSlova >= 3))
                     btnHelp.Enabled = true;
