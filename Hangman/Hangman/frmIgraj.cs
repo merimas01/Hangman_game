@@ -589,7 +589,7 @@ namespace Hangman
                 lblHelp.ForeColor = Color.Black;
                 lblBrojacHint.ForeColor = Color.Black;
                 txtUnos.ForeColor = Color.Black;
-                txtUnos.BackColor = Color.White;
+                txtUnos.BackColor = Color.SeaShell;
                 lblBrojRijeci.BackColor = Color.Gray;
                 lblBrojRijeci.ForeColor = Color.White;
             }
