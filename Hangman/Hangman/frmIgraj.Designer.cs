@@ -252,12 +252,12 @@ namespace Hangman
             this.btnChallenging.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChallenging.Enabled = false;
             this.btnChallenging.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.btnChallenging.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChallenging.Location = new System.Drawing.Point(1000, 401);
+            this.btnChallenging.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChallenging.Location = new System.Drawing.Point(945, 401);
             this.btnChallenging.Name = "btnChallenging";
-            this.btnChallenging.Size = new System.Drawing.Size(182, 110);
+            this.btnChallenging.Size = new System.Drawing.Size(237, 110);
             this.btnChallenging.TabIndex = 23;
-            this.btnChallenging.Text = "IZAZOVI SE";
+            this.btnChallenging.Text = "IZAZOVI SE I POGODI RIJEČ ZA 60 SEKUNDI";
             this.btnChallenging.UseVisualStyleBackColor = false;
             this.btnChallenging.Click += new System.EventHandler(this.btnChallenging_Click);
             // 
@@ -272,12 +272,12 @@ namespace Hangman
             this.btnSentences.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSentences.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSentences.Enabled = false;
-            this.btnSentences.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSentences.Location = new System.Drawing.Point(1000, 267);
+            this.btnSentences.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSentences.Location = new System.Drawing.Point(945, 267);
             this.btnSentences.Name = "btnSentences";
-            this.btnSentences.Size = new System.Drawing.Size(182, 110);
+            this.btnSentences.Size = new System.Drawing.Size(237, 110);
             this.btnSentences.TabIndex = 25;
-            this.btnSentences.Text = "LATINSKE IZREKE";
+            this.btnSentences.Text = "ISKORISTI ZNANJE U LATINSKIM IZREKAMA";
             this.btnSentences.UseVisualStyleBackColor = false;
             this.btnSentences.Click += new System.EventHandler(this.btnSentences_Click);
             // 
