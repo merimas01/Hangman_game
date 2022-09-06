@@ -164,7 +164,7 @@ namespace Hangman
             this.btnNovaIgra.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovaIgra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovaIgra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNovaIgra.Location = new System.Drawing.Point(926, 624);
+            this.btnNovaIgra.Location = new System.Drawing.Point(931, 624);
             this.btnNovaIgra.Name = "btnNovaIgra";
             this.btnNovaIgra.Size = new System.Drawing.Size(132, 47);
             this.btnNovaIgra.TabIndex = 9;

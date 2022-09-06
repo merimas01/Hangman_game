@@ -37,7 +37,8 @@ namespace Hangman
             int ukupnoRijeci = frmIgraj.ukupnoRijeciPocetna+frmIgraj.ukupnoRijeciLatinskeIzreke+frmIgraj.ukupnoRijeciIzazoviSe;
             int pogodjeneRijeci = frmIgraj.BrojPobjeda;
 
-            lblTekst.Text += "Ukupno pogođenih riječi: " + pogodjeneRijeci +" od "+ ukupnoRijeci+"."+Environment.NewLine;
+            lblTekst.Text += "Ukupno pogođenih riječi: " + pogodjeneRijeci +" od "+ ukupnoRijeci+" ("+
+                Math.Round(((pogodjeneRijeci*1.0m)/ukupnoRijeci)*100, 0)+"%)."+Environment.NewLine;
         }
     }
 }

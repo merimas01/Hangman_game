@@ -111,7 +111,7 @@ namespace Hangman
                 {
                     btnNovaIgra.Enabled = true;
                     lblBrojRijeci.Text = $"{TrenutnoPredjenihRijeci}/{ukupnoRijeciPocetna}";
-                }                 
+                }  
             }
 
             if (buttonSentencesClicked == true && buttonChallengingClicked == false)
@@ -146,25 +146,26 @@ namespace Hangman
             }
         }
         public void Igranje()
-        {
+        {         
             RandomRijec = BirajRandomRijec();
-
-            IskoristeneRijeci.Add(RandomRijec);
-
-            BrojacRijeci();
-
+         
             if (RandomRijec == "")
             {
                 OnemoguciUnos();
                 lblPoruka.Text = "Žao nam je... sve riječi ste iskoristili...";
             }
             else
-                Resetuj();
-
+            {
+                IskoristeneRijeci.Add(RandomRijec);  
+                Resetuj();       
+            }
+               
+            BrojacRijeci();
+          
             string novi = "";
             for (int i = 0; i < RandomRijec.Length; i++)
             {
-                if (RandomRijec[i] != ' ' && RandomRijec[i]!=',')
+                if (RandomRijec[i] != ' ' && RandomRijec[i] != ',')
                     novi += "_ ";
                 else if (RandomRijec[i] == ' ')
                     novi += "  ";
@@ -172,7 +173,7 @@ namespace Hangman
                     novi += ", ";
             }
             lblNepoznataRijec.Text = novi;
-      
+           
             lblBrojSlova.Text = RandomRijec.Length.ToString();
 
             if (buttonChallengingClicked == true && RandomRijec != "")
@@ -210,7 +211,7 @@ namespace Hangman
                             else
                                 noviText += lblNepoznataRijec.Text[j];                           
                         }
-                        lblNepoznataRijec.Text = noviText;                                              
+                        lblNepoznataRijec.Text = noviText;
                         valid = true;                       
                     }
                 }
@@ -337,7 +338,8 @@ namespace Hangman
                 ticks = 0;
                 timer1.Start();
             }      
-            Resetuj();
+
+           // Resetuj();  
             Igranje();
         }
 
@@ -501,6 +503,7 @@ namespace Hangman
                 txtUnos.Enabled = false;
                 btnPotvrdi.Enabled = false;
                 btnHelp.Enabled = false;
+                txtUnos.Text = RandomRijec;
             }
         }
 
@@ -529,7 +532,7 @@ namespace Hangman
 
         private void btnNazad_Click(object sender, EventArgs e)
         {
-            Resetuj();
+            //Resetuj();
             EnablebtnSentences();
             EnablebtnChallenging();
             buttonSentencesClicked = false;
@@ -594,6 +597,5 @@ namespace Hangman
                 lblBrojRijeci.ForeColor = Color.White;
             }
         }
-
     }
 }
