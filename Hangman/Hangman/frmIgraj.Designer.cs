@@ -162,6 +162,7 @@ namespace Hangman
             this.btnNovaIgra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNovaIgra.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnNovaIgra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovaIgra.Enabled = false;
             this.btnNovaIgra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovaIgra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNovaIgra.Location = new System.Drawing.Point(931, 624);
@@ -253,7 +254,7 @@ namespace Hangman
             this.btnChallenging.Enabled = false;
             this.btnChallenging.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.btnChallenging.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChallenging.Location = new System.Drawing.Point(945, 401);
+            this.btnChallenging.Location = new System.Drawing.Point(945, 417);
             this.btnChallenging.Name = "btnChallenging";
             this.btnChallenging.Size = new System.Drawing.Size(237, 110);
             this.btnChallenging.TabIndex = 23;
@@ -273,7 +274,7 @@ namespace Hangman
             this.btnSentences.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSentences.Enabled = false;
             this.btnSentences.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSentences.Location = new System.Drawing.Point(945, 267);
+            this.btnSentences.Location = new System.Drawing.Point(945, 283);
             this.btnSentences.Name = "btnSentences";
             this.btnSentences.Size = new System.Drawing.Size(237, 110);
             this.btnSentences.TabIndex = 25;
