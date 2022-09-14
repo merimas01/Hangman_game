@@ -17,13 +17,13 @@ Implementirano je:
 - ako korisnik nije pogodio riječ a ispunio je broj dozvoljenih pokušaja, tražena rijec se pojavi na ekranu
 - dugme Nazad koje vraća korisnika na pogađanje riječi iz početne faze
 - svaka pogođena ili nepogođena riječ se spašava u listu, te se više ne pojavljuje korisniku
+- korisnik ne može dobiti sljedeću riječ ukoliko se prethodna ne pogodi ili se ne iskoristi dozvoljen broj pokušaja za pogađanje
 - riječi se biraju random metodom
 
 ![4](https://user-images.githubusercontent.com/94557948/188467817-75c5a9b2-d0d1-4a5f-93d2-208fe5d0c70d.png)
 
-![1](https://user-images.githubusercontent.com/94557948/188467467-be932df4-a98e-49a9-8cf0-ab7937ff8f47.png)
+![1a](https://user-images.githubusercontent.com/94557948/190172250-deafa705-fe15-4590-b0e2-1ac30eee7543.png)
 
-![2](https://user-images.githubusercontent.com/94557948/188467632-40fc1b56-e742-4dee-9ce9-8a06f8cdce77.png)
+![1d](https://user-images.githubusercontent.com/94557948/190172397-edc7ad05-0d58-4049-84d3-2a7e35a059c2.png)
 
-![3](https://user-images.githubusercontent.com/94557948/188467666-f6c1795c-4df1-47ce-bd3e-fd2a714cf765.png)
 
