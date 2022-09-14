@@ -287,6 +287,7 @@ namespace Hangman
             if (JeLiKraj())
             {
                 OnemoguciUnos();
+                txtUnos.Text = RandomRijec;
                 btnNovaIgra.Enabled = true;
             }   
         }
@@ -301,8 +302,7 @@ namespace Hangman
             lblPoruka.Text = "Pokušajte sa novom riječi klikom na >>nova riječ<< !";
             lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
             btnPotvrdi.Enabled = false;
-            btnHelp.Enabled = false;
-            txtUnos.Text = RandomRijec;
+            btnHelp.Enabled = false;           
             if (buttonChallengingClicked == true)
             {
                 timer1.Stop();
