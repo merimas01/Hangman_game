@@ -15,7 +15,6 @@ namespace Hangman
         public frmIgraj(string level = "")
         {
             InitializeComponent();
-            BrojacNovaIgra += 1; //kada se pokrece inicijalna igra
             Level = level;
             Resetuj();
             Suma = 0;
@@ -140,19 +139,48 @@ namespace Hangman
                 }                   
             }
         }
+
+        private void EnablanjeDugmadi()
+        {
+            if (buttonSentencesClicked == true && brojacIzazoviSe < ukupnoRijeciIzazoviSe)
+            {
+                btnChallenging.Enabled = true;
+            }
+            if (buttonChallengingClicked == true && brojacLatinskeIzreke < ukupnoRijeciLatinskeIzreke)
+            {
+                btnSentences.Enabled = true;
+            }
+            if ((buttonSentencesClicked == true || buttonChallengingClicked == true) &&
+                TrenutnoPredjenihRijeci < ukupnoRijeciPocetna)
+            {
+                btnNazad.Enabled = true;
+            }
+            if (buttonSentencesClicked == false && buttonChallengingClicked == false && brojacIzazoviSe < ukupnoRijeciIzazoviSe)
+            {
+                btnChallenging.Enabled = true;
+            }
+            if (buttonSentencesClicked == false && buttonChallengingClicked == false && brojacLatinskeIzreke < ukupnoRijeciLatinskeIzreke)
+            {
+                btnSentences.Enabled = true;
+            }
+        }
+
         public void Igranje()
-        {         
+        {
             RandomRijec = BirajRandomRijec();
-         
+
+            Resetuj();
+
             if (RandomRijec == "")
             {
                 OnemoguciUnos();
                 lblPoruka.Text = "Žao nam je... sve riječi ste iskoristili...";
+                EnablanjeDugmadi();
             }
             else
             {
-                IskoristeneRijeci.Add(RandomRijec);  
-                Resetuj();       
+                BrojacNovaIgra++;
+                IskoristeneRijeci.Add(RandomRijec);        
             }
                
             BrojacRijeci();
@@ -269,6 +297,9 @@ namespace Hangman
                     Bodovi();
                     btnNovaIgra.Enabled = true;
 
+                    if((buttonSentencesClicked==true || buttonChallengingClicked==true) && TrenutnoPredjenihRijeci < ukupnoRijeciPocetna)
+                        btnNazad.Enabled = true;
+
                     if (buttonSentencesClicked==false)
                         EnablebtnSentences();
                     
@@ -289,6 +320,15 @@ namespace Hangman
                 OnemoguciUnos();
                 txtUnos.Text = RandomRijec;
                 btnNovaIgra.Enabled = true;
+
+                if ((buttonSentencesClicked == true || buttonChallengingClicked == true) && TrenutnoPredjenihRijeci<ukupnoRijeciPocetna)
+                    btnNazad.Enabled = true;
+
+                if (buttonSentencesClicked == false)
+                    EnablebtnSentences();
+
+                if (buttonChallengingClicked == false)
+                    EnablebtnChallenging();
             }   
         }
         private bool JeLiKraj()
@@ -299,7 +339,7 @@ namespace Hangman
         private void OnemoguciUnos()
         {
             txtUnos.Enabled = false;
-            lblPoruka.Text = "Pokušajte sa novom riječi klikom na >>nova riječ<< !";
+            lblPoruka.Text = $"Iskoristili ste dozvoljen broj pokušaja..";
             lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
             btnPotvrdi.Enabled = false;
             btnHelp.Enabled = false;           
@@ -322,16 +362,16 @@ namespace Hangman
             btnHelp.Enabled = false;
             lblBrojacHint.Text = "";
             pogodjenaSlova = 0;    //ako covjek nikada ne pritisne na btnHelp, ovde se ove varijable moraju osvjeziti
-            nepogodjenaSlova = 0;
+            nepogodjenaSlova = 0;      
         }
         private void btnNovaIgra_Click(object sender, EventArgs e)
         {
             btnNovaIgra.Enabled = false;
 
-            if (RandomRijec != "")
-            {
-                BrojacNovaIgra++;
-            }
+            btnChallenging.Enabled = false;
+            btnSentences.Enabled = false;
+
+            btnNazad.Enabled = false;
 
             if (lblTimer.Text != "OFF")
             {
@@ -339,7 +379,6 @@ namespace Hangman
                 timer1.Start();
             }      
 
-           // Resetuj();  
             Igranje();
         }
 
@@ -382,6 +421,7 @@ namespace Hangman
              
             btnHelp.Enabled = false;
         }
+
         private char RandomSlovo()
         {
             int i = new Random().Next(RandomRijec.Count());
@@ -458,38 +498,58 @@ namespace Hangman
         {          
             switch (Level)
             {
-                case "easy": if (Suma >= 40) { btnChallenging.Enabled = true; btnChallenging.BackColor = Color.LimeGreen; } break;
-                case "hard": if (Suma >= 35) { btnChallenging.Enabled = true; btnChallenging.BackColor = Color.LimeGreen; } break;
-                case "adv":  if (Suma >= 30) { btnChallenging.Enabled = true; btnChallenging.BackColor = Color.LimeGreen; } break;
+                case "easy": 
+                    if (Suma >= 40) { btnChallenging.Enabled = true; btnChallenging.BackColor = Color.LimeGreen; }
+                    if (brojacIzazoviSe >= ukupnoRijeciIzazoviSe && ukupnoRijeciIzazoviSe != 0) btnChallenging.Enabled = false;
+                    break;
+                case "hard": 
+                    if (Suma >= 35) { btnChallenging.Enabled = true; btnChallenging.BackColor = Color.LimeGreen; }
+                    if (brojacIzazoviSe >= ukupnoRijeciIzazoviSe && ukupnoRijeciIzazoviSe != 0) btnChallenging.Enabled = false;
+                    break;
+                case "adv":  
+                    if (Suma >= 30) { btnChallenging.Enabled = true; btnChallenging.BackColor = Color.LimeGreen; }
+                    if (brojacIzazoviSe >= ukupnoRijeciIzazoviSe && ukupnoRijeciIzazoviSe != 0) btnChallenging.Enabled = false;
+                    break;
             }
         }
         private void EnablebtnSentences()
         {
             switch (Level)
             {
-                case "easy": if (Suma >= 30) { btnSentences.Enabled = true; btnSentences.BackColor = Color.Gold; } break;
-                case "hard": if (Suma >= 25) { btnSentences.Enabled = true; btnSentences.BackColor = Color.Gold; } break;
-                case "adv":  if (Suma >= 20) { btnSentences.Enabled = true; btnSentences.BackColor = Color.Gold; } break;
+                case "easy": 
+                    if (Suma >= 30) { btnSentences.Enabled = true; btnSentences.BackColor = Color.Gold; }
+                    if (brojacLatinskeIzreke >= ukupnoRijeciLatinskeIzreke && ukupnoRijeciLatinskeIzreke != 0) btnSentences.Enabled = false;
+                    break;
+                case "hard": 
+                    if (Suma >= 25) { btnSentences.Enabled = true; btnSentences.BackColor = Color.Gold; }
+                    if (brojacLatinskeIzreke >= ukupnoRijeciLatinskeIzreke && ukupnoRijeciLatinskeIzreke != 0) btnSentences.Enabled = false;
+                    break;
+                case "adv":  
+                    if (Suma >= 20) { btnSentences.Enabled = true; btnSentences.BackColor = Color.Gold; }
+                    if (brojacLatinskeIzreke >= ukupnoRijeciLatinskeIzreke && ukupnoRijeciLatinskeIzreke != 0) btnSentences.Enabled = false;
+                    break;
             }
         }
+
         private void btnChallenging_Click(object sender, EventArgs e)
         {
             buttonChallengingClicked = true;
-           // Resetuj();
-            if(RandomRijec != "")
-               ++BrojacNovaIgra;
+
+            btnNovaIgra.Enabled = false;
+
             switch (Level)
             {
-                case "easy": Stringovi = new List<string>() { "STOLICA", "ZEMLJA", "ISKRENOST", "STATUS", "BAJKA", "MUDROST" }; ukupnoRijeciIzazoviSe = Stringovi.Count; break;
+                case "easy": Stringovi = new List<string>() { "STOLICA", "ZAPAD", "HUMANOST", "MISLIOC", "STATUS", "BAJKA", "MUDROST" }; ukupnoRijeciIzazoviSe = Stringovi.Count; break;
                 case "hard": Stringovi = new List<string>() { "TEHNOLOGIJA", "ORANGUTAN", "MINIJATURAN", "SLIKOVITA","BIOSFERA","RENESANSA" }; ukupnoRijeciIzazoviSe = Stringovi.Count; break;
                 case "adv":  Stringovi = new List<string>() { "ADMINISTRATIVAN", "FILANTROPIJA", "HERMAFRODITIZAM", "HIDRATIZACIJA","INSTRUKCIJA" }; ukupnoRijeciIzazoviSe = Stringovi.Count; break;
             }
-            btnSentences.Enabled = true;
+            // btnSentences.Enabled = true;
+            btnSentences.Enabled = false;
             buttonSentencesClicked = false;
             Igranje();
             lblUkucaj.Text = "Ukucaj slovo/riječ:";       
             btnChallenging.Enabled = false; 
-            btnNazad.Enabled = true;         
+            btnNazad.Enabled = false;         
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -504,19 +564,22 @@ namespace Hangman
                 btnPotvrdi.Enabled = false;
                 btnHelp.Enabled = false;
                 txtUnos.Text = RandomRijec;
+                btnNovaIgra.Enabled = true;
+                btnSentences.Enabled = true;
+                btnNazad.Enabled = true;
             }
         }
 
         private void btnSentences_Click(object sender, EventArgs e)
         {
             buttonSentencesClicked = true;
-            btnNazad.Enabled = true;
-            EnablebtnChallenging();
+
+            btnNovaIgra.Enabled = false;
+
+           // EnablebtnChallenging();
             buttonChallengingClicked = false;
             lblTimer.Text = "OFF";
-            //Resetuj();
-            if(RandomRijec != "")
-               ++BrojacNovaIgra;
+
             switch (Level)
             {
                 case "easy": Stringovi = new List<string>() { "DJELA, NE RIJEČI", "KOCKA JE BAČENA", "ISKORISTI DAN", "MLADOST LUDOST", "ISKUSTVO POUČAVA", "IZGLED VARA" }; ukupnoRijeciLatinskeIzreke = Stringovi.Count;  break;
@@ -527,14 +590,16 @@ namespace Hangman
             lblUkucaj.Text = "Ukucaj slovo/izreku:";
             lblBrojSlovaText.Hide();
             lblBrojSlova.Hide();
-            btnSentences.Enabled = false;       
+            btnSentences.Enabled = false;
+            btnNazad.Enabled = false;
+            btnChallenging.Enabled = false;
         }
 
         private void btnNazad_Click(object sender, EventArgs e)
         {
             //Resetuj();
-            EnablebtnSentences();
-            EnablebtnChallenging();
+            //EnablebtnSentences();
+            //EnablebtnChallenging();
             buttonSentencesClicked = false;
             buttonChallengingClicked = false;
             lblTimer.Text = "OFF";
@@ -547,6 +612,9 @@ namespace Hangman
             Igranje();
             ++BrojacNovaIgra;
             btnNazad.Enabled = false;
+            btnNovaIgra.Enabled = false;
+            btnSentences.Enabled = false;
+            btnChallenging.Enabled = false;
         }
 
         private void btnMode_Click(object sender, EventArgs e)
@@ -554,7 +622,7 @@ namespace Hangman
             brojKlikanja++;
             if (brojKlikanja % 2 != 0)
             {
-                btnMode.Text = "DARK";
+                btnMode.Text = "TAMNO";
                 this.BackColor = Color.Black;
                 lblPogodiRijec.ForeColor = Color.White;
                 lblUkucaj.ForeColor = Color.White;
@@ -576,7 +644,7 @@ namespace Hangman
             }
             else
             {
-                btnMode.Text = "LIGHT";
+                btnMode.Text = "SVIJETLO";
                 this.BackColor = Color.SeaShell;
                 lblPogodiRijec.ForeColor = Color.Black;
                 lblUkucaj.ForeColor = Color.Black;

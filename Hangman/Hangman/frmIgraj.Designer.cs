@@ -226,9 +226,9 @@ namespace Hangman
             this.btnInfo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfo.Location = new System.Drawing.Point(1107, 16);
+            this.btnInfo.Location = new System.Drawing.Point(1069, 16);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(75, 34);
+            this.btnInfo.Size = new System.Drawing.Size(113, 34);
             this.btnInfo.TabIndex = 14;
             this.btnInfo.Text = "INFO";
             this.toolTip2.SetToolTip(this.btnInfo, "pravila igre");
@@ -372,11 +372,11 @@ namespace Hangman
             this.btnMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMode.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnMode.Location = new System.Drawing.Point(1107, 66);
+            this.btnMode.Location = new System.Drawing.Point(1069, 66);
             this.btnMode.Name = "btnMode";
-            this.btnMode.Size = new System.Drawing.Size(75, 35);
+            this.btnMode.Size = new System.Drawing.Size(113, 35);
             this.btnMode.TabIndex = 33;
-            this.btnMode.Text = "LIGHT";
+            this.btnMode.Text = "SVIJETLO";
             this.toolTip7.SetToolTip(this.btnMode, "light/dark mode");
             this.btnMode.UseVisualStyleBackColor = false;
             this.btnMode.Click += new System.EventHandler(this.btnMode_Click);
