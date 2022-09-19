@@ -377,7 +377,7 @@ namespace Hangman
             this.btnMode.Size = new System.Drawing.Size(113, 35);
             this.btnMode.TabIndex = 33;
             this.btnMode.Text = "SVIJETLO";
-            this.toolTip7.SetToolTip(this.btnMode, "light/dark mode");
+            this.toolTip7.SetToolTip(this.btnMode, "svijetli/tamni mod");
             this.btnMode.UseVisualStyleBackColor = false;
             this.btnMode.Click += new System.EventHandler(this.btnMode_Click);
             // 

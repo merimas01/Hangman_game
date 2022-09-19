@@ -34,11 +34,11 @@ namespace Hangman
             lblTekst.Text = $"{frmHangman.Ime}, ostvarili ste {frmIgraj.BrojPobjeda} pobjeda od {frmIgraj.BrojacNovaIgra} započetih igri. " +
                 $"Vaš trenutni ukupan procenat uspjeha je {procenat}%."+Environment.NewLine+Environment.NewLine;
 
-            int ukupnoRijeci = frmIgraj.ukupnoRijeciPocetna+frmIgraj.ukupnoRijeciLatinskeIzreke+frmIgraj.ukupnoRijeciIzazoviSe;
-            int pogodjeneRijeci = frmIgraj.BrojPobjeda;
+            //int ukupnoRijeci = frmIgraj.ukupnoRijeciPocetna+frmIgraj.ukupnoRijeciLatinskeIzreke+frmIgraj.ukupnoRijeciIzazoviSe;
+            //int pogodjeneRijeci = frmIgraj.BrojPobjeda;
 
-            lblTekst.Text += "Ukupno pogođenih riječi: " + pogodjeneRijeci +" od "+ ukupnoRijeci+" ("+
-                Math.Round(((pogodjeneRijeci*1.0m)/ukupnoRijeci)*100, 0)+"%)."+Environment.NewLine;
+            //lblTekst.Text += "Ukupno pogođenih riječi: " + pogodjeneRijeci +" od "+ ukupnoRijeci+" ("+
+            //    Math.Round(((pogodjeneRijeci*1.0m)/ukupnoRijeci)*100, 0)+"%)."+Environment.NewLine;
         }
     }
 }

@@ -23,18 +23,24 @@ namespace Hangman
         private void btnEasy_Click(object sender, EventArgs e)
         {
             frmIgraj igraj = new frmIgraj(Easy);
+            frmIgraj.BrojacNovaIgra = 0;
+            frmIgraj.BrojPobjeda = 0;
             igraj.ShowDialog();
         }
 
         private void btnHard_Click(object sender, EventArgs e)
         {
             frmIgraj igraj = new frmIgraj(Hard);
+            frmIgraj.BrojacNovaIgra = 0;
+            frmIgraj.BrojPobjeda = 0;
             igraj.ShowDialog();
         }
 
         private void btnAdvanced_Click(object sender, EventArgs e)
         {
             frmIgraj igraj = new frmIgraj(Advanced);
+            frmIgraj.BrojacNovaIgra = 0;
+            frmIgraj.BrojPobjeda = 0;
             igraj.ShowDialog();
         }
 
