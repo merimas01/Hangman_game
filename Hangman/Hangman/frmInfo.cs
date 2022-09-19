@@ -44,7 +44,7 @@ namespace Hangman
                 lblPravila.Text = "Imate 5 dozvoljenih puta da pogriješite." + Environment.NewLine +
                     "Koristite i naše dijakritičke znakove (č,ć,ž,đ,š)."+Environment.NewLine+
                     "Možete koristiti mala ili velika slova pri unosu riječi. "+Environment.NewLine+
-                    "Klikom na Pomoć možete da dobijete max 2 pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena u datoj riječi)." + Environment.NewLine +
+                    "Klikom na Pomoć možete da dobijete max 2 pomoćna slova (ali morate imati minimalno 3 pogođena i minimalno 4 nepogođena slova)." + Environment.NewLine +
                     "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje. " + Environment.NewLine +
                     "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine +
                     "BODOVANJE: " + Environment.NewLine +
@@ -53,7 +53,8 @@ namespace Hangman
                     "nastavlja i za svaku pogođenu izreku dobijate određeni broj bodova." + Environment.NewLine +
                     "Ako osvojite 40+ bodova, moći ćete pristupiti opciji" + Environment.NewLine +
                     ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ." + Environment.NewLine + Environment.NewLine +
-                    "NAPOMENA: Gubite po 3 boda ako koristite pomoćno slovo." + Environment.NewLine + Environment.NewLine +
+                    "NAPOMENA: "+
+                    "Gubite po 3 boda za svako pomoćno slovo. Ako imate manje od 3 ostvarena boda, ne možete koristiti pomoćno slovo." + Environment.NewLine + Environment.NewLine +
                     "PRINCIP BODOVANJA: " + Environment.NewLine +
                     "Broj grešaka: 0 -> Bodovi: 10" + Environment.NewLine +
                     "Broj grešaka: 1 -> Bodovi: 8" + Environment.NewLine +
@@ -70,7 +71,7 @@ namespace Hangman
                 lblPravila.Text = "Imate 4 dozvoljena puta da pogriješite." + Environment.NewLine +
                     "Koristite i naše dijakritičke znakove (č,ć,ž,đ,š)." + Environment.NewLine +
                     "Možete koristiti mala ili velika slova pri unosu riječi. " + Environment.NewLine +
-                    "Klikom na Pomoć možete da dobijete max 3 pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena u datoj riječi)." + Environment.NewLine +
+                    "Klikom na Pomoć možete da dobijete max 3 pomoćna slova (ali morate imati minimalno 3 pogođena i minimalno 4 nepogođena slova)." + Environment.NewLine +
                     "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje. " + Environment.NewLine +
                     "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine +
                     "BODOVANJE:" + Environment.NewLine +
@@ -79,8 +80,9 @@ namespace Hangman
                     "nastavlja i za svaku pogođenu izreku dobijate određeni broj bodova." + Environment.NewLine +
                     "Ako osvojite 35+ bodova, moći ćete pristupiti opciji" + Environment.NewLine +
                     ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ." + Environment.NewLine + Environment.NewLine +
-                    "NAPOMENA: Gubite po 3 boda ako koristite pomoćno slovo." + Environment.NewLine + Environment.NewLine +
-                     "PRINCIP BODOVANJA: " + Environment.NewLine +
+                    "NAPOMENA: "+
+                    "Gubite po 3 boda za svako pomoćno slovo. Ako imate manje od 3 ostvarena boda, ne možete koristiti pomoćno slovo." + Environment.NewLine + Environment.NewLine +
+                    "PRINCIP BODOVANJA: " + Environment.NewLine +
                     "Broj grešaka: 0 -> Bodovi: 15" + Environment.NewLine +
                     "Broj grešaka: 1 -> Bodovi: 12" + Environment.NewLine +
                     "Broj grešaka: 2 -> Bodovi: 9" + Environment.NewLine +
@@ -95,7 +97,7 @@ namespace Hangman
                 lblPravila.Text = "Imate 3 dozvoljena puta da pogriješite." + Environment.NewLine +
                        "Koristite i naše dijakritičke znakove (č,ć,ž,đ,š)." + Environment.NewLine +
                        "Možete koristiti mala ili velika slova pri unosu riječi. " + Environment.NewLine +
-                       "Klikom na Pomoć možete da dobijete max 3 pomoćna slova (ali morate imati minimalno 3 pogođena slova i minimalno 4 nepogođena u datoj riječi)." + Environment.NewLine +
+                       "Klikom na Pomoć možete da dobijete max 3 pomoćna slova (ali morate imati minimalno 3 pogođena i minimalno 4 nepogođena slova)." + Environment.NewLine +
                        "Klikom na Nova riječ dobijate sljedeću riječ za pogađanje. " + Environment.NewLine +
                        "Klikom na Uspjeh, pokazat će Vam se Vaš trenutni uspjeh." + Environment.NewLine + Environment.NewLine +
                        "BODOVANJE: " + Environment.NewLine +
@@ -104,7 +106,8 @@ namespace Hangman
                        "nastavlja i za svaku pogođenu izreku dobijate određeni broj bodova." + Environment.NewLine +
                        "Ako osvojite 30+ bodova, moći ćete pristupiti opciji" + Environment.NewLine +
                        ">>IZAZOVI SE<< gdje ćete imati 60 sekundi da pogodite riječ." + Environment.NewLine + Environment.NewLine +
-                       "NAPOMENA: Gubite po 3 boda ako koristite pomoćno slovo." + Environment.NewLine + Environment.NewLine +
+                       "NAPOMENA: " +
+                       "Gubite po 3 boda za svako pomoćno slovo. Ako imate manje od 3 ostvarena boda, ne možete koristiti pomoćno slovo." + Environment.NewLine + Environment.NewLine +
                        "PRINCIP BODOVANJA: " + Environment.NewLine +
                        "Broj grešaka: 0 -> Bodovi: 20" + Environment.NewLine +
                        "Broj grešaka: 1 -> Bodovi: 15" + Environment.NewLine +

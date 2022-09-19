@@ -185,6 +185,8 @@ namespace Hangman
                
             BrojacRijeci();
           
+            //napravi nepoznatu rijec 
+
             string novi = "";
             for (int i = 0; i < RandomRijec.Length; i++)
             {
@@ -198,6 +200,18 @@ namespace Hangman
             lblNepoznataRijec.Text = novi;
            
             lblBrojSlova.Text = RandomRijec.Length.ToString();
+
+            //promjena boje buttona
+
+            if ((Level == "easy" && Suma < 30) || (Level == "hard" && Suma < 25) || (Level == "adv" && Suma < 20))
+            {
+                btnSentences.BackColor = Color.Gainsboro;
+                btnChallenging.BackColor = Color.Gainsboro;
+            }
+            else if ((Level == "easy" && Suma > 30 && Suma<40) || (Level == "hard" && Suma > 25 && Suma<35) || (Level == "adv" && Suma > 20 && Suma<30))
+                btnChallenging.BackColor = Color.Gainsboro;
+
+            //pokreni timer
 
             if (buttonChallengingClicked == true && RandomRijec != "")
             {
@@ -268,13 +282,10 @@ namespace Hangman
         {
             if (buttonSentencesClicked == false && buttonChallengingClicked == false)
                 btnNovaIgra.Enabled = true;
-
-            if (buttonSentencesClicked == true && ((Level == "easy" && Suma >= 30) || (Level == "hard" && Suma >= 25) || (Level == "adv" && Suma >= 20)))
+            else if (buttonSentencesClicked == true && ((Level == "easy" && Suma >= 30) || (Level == "hard" && Suma >= 25) || (Level == "adv" && Suma >= 20)))
                 btnNovaIgra.Enabled = true;
-
-            if (buttonChallengingClicked == true && ((Level == "easy" && Suma >= 40) || (Level == "hard" && Suma >= 35) || (Level == "adv" && Suma >= 30)))
+            else if (buttonChallengingClicked == true && ((Level == "easy" && Suma >= 40) || (Level == "hard" && Suma >= 35) || (Level == "adv" && Suma >= 30)))
                 btnNovaIgra.Enabled = true;        
-
             if ((buttonSentencesClicked == true || buttonChallengingClicked == true) && TrenutnoPredjenihRijeci < ukupnoRijeciPocetna)
                 btnNazad.Enabled = true;
 
@@ -374,7 +385,7 @@ namespace Hangman
             btnHelp.Enabled = false;
             lblBrojacHint.Text = "";
             pogodjenaSlova = 0;    //ako covjek nikada ne pritisne na btnHelp, ovde se ove varijable moraju osvjeziti
-            nepogodjenaSlova = 0;      
+            nepogodjenaSlova = 0;
         }
         private void btnNovaIgra_Click(object sender, EventArgs e)
         {
