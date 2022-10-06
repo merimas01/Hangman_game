@@ -362,7 +362,6 @@ namespace Hangman
         private void OnemoguciUnos()
         {
             txtUnos.Enabled = false;
-            lblPoruka.Text = $"Iskoristili ste dozvoljen broj pokušaja..";
             lblBrojacPokusaja.Text = $"{BrojacPokusaja}";
             btnPotvrdi.Enabled = false;
             btnHelp.Enabled = false;           
@@ -418,20 +417,43 @@ namespace Hangman
             if (Suma >= 3)
             {
                 int k = 0;
-                for (int i = 0; i < lblNepoznataRijec.Text.Length; i += 2)
+                if (lblNepoznataRijec.Text.Contains(','))
                 {
-                    if (lblNepoznataRijec.Text[i] == RandomRijec[k] && lblNepoznataRijec.Text[i] != ' ' && lblNepoznataRijec.Text[i] != ',')
-                        pogodjenaSlova++;
-                    else
-                        nepogodjenaSlova++;
-                    k++;
+                    string noviLabel = lblNepoznataRijec.Text.Trim(',');
+
+                    for (int i = 0; i < noviLabel.Length; i += 2)
+                    {
+                        if (noviLabel[i] == RandomRijec[k] && noviLabel[i] != ' ')
+                            pogodjenaSlova++;
+                        else
+                            nepogodjenaSlova++;
+                        k++;
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < lblNepoznataRijec.Text.Length; i += 2)
+                    {
+                        if (lblNepoznataRijec.Text[i] == RandomRijec[k] && lblNepoznataRijec.Text[i] != ' ')
+                            pogodjenaSlova++;
+                        else
+                            nepogodjenaSlova++;
+                        k++;
+                    }
+                }         
+
+                //stari nacin
+                //if ((Level == "easy" && BrojacHelp < 2) || (Level == "hard" && BrojacHelp < 3) || (Level == "adv" && BrojacHelp < 3))
+                //{
+                //    if ((nepogodjenaSlova >= 4 && pogodjenaSlova >= 3))
+                //        btnHelp.Enabled = true;
+                //}
+
+                if (pogodjenaSlova < nepogodjenaSlova && !JeLiPogodjenaRijec())
+                {
+                    btnHelp.Enabled = true;
                 }
 
-                if ((Level == "easy" && BrojacHelp < 2) || (Level == "hard" && BrojacHelp < 3) || (Level == "adv" && BrojacHelp < 3))
-                {
-                    if ((nepogodjenaSlova >= 4 && pogodjenaSlova >= 3))
-                        btnHelp.Enabled = true;
-                }
                 pogodjenaSlova = 0;
                 nepogodjenaSlova = 0;
             }
@@ -462,7 +484,7 @@ namespace Hangman
                 i = new Random().Next(RandomRijec.Count());
             }
 
-            while (lblNepoznataRijec.Text.Contains(RandomRijec[i])) //da li ce ovo ikada biti beskonacna petlja? nece. (jer da bi mogli dobiti pomocno slovo, minimalno 4 prazna mjesta moraju biti. ako su 3 prazna mjesta, btnHelp ce biti onemogucen te samim tim necemo moci koristiti ovu funkciju za generisanje RandomSlova)
+            while (lblNepoznataRijec.Text.Contains(RandomRijec[i])) //da li ce ovo ikada biti beskonacna petlja? nece. 
             {
                 i = new Random().Next(RandomRijec.Count());
             }
