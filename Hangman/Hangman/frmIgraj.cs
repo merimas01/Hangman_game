@@ -104,9 +104,11 @@ namespace Hangman
                 if (TrenutnoPredjenihRijeci >= ukupnoRijeciPocetna)
                 {
                     lblBrojRijeci.Text = $"{ukupnoRijeciPocetna}/{ukupnoRijeciPocetna}";
+                    btn_prebaci.Enabled = false;
                 }
                 else
                 {
+                    btn_prebaci.Enabled = true;
                     lblBrojRijeci.Text = $"{TrenutnoPredjenihRijeci}/{ukupnoRijeciPocetna}";
                 }  
             }
@@ -118,9 +120,11 @@ namespace Hangman
                 if (brojacLatinskeIzreke >= ukupnoRijeciLatinskeIzreke)
                 {
                     lblBrojRijeci.Text = $"{ukupnoRijeciLatinskeIzreke}/{ukupnoRijeciLatinskeIzreke}";
+                    btn_prebaci.Enabled = false;
                 }                   
                 else 
                 {
+                    btn_prebaci.Enabled = true;
                     lblBrojRijeci.Text = $"{brojacLatinskeIzreke}/{ukupnoRijeciLatinskeIzreke}";
                 }                  
             }
@@ -132,9 +136,11 @@ namespace Hangman
                 if (brojacIzazoviSe >= ukupnoRijeciIzazoviSe)
                 {
                     lblBrojRijeci.Text = $"{ukupnoRijeciIzazoviSe}/{ukupnoRijeciIzazoviSe}";
+                    btn_prebaci.Enabled = false;
                 }
                 else
                 {
+                    btn_prebaci.Enabled = true;
                     lblBrojRijeci.Text = $"{brojacIzazoviSe}/{ukupnoRijeciIzazoviSe}";
                 }                   
             }
@@ -305,6 +311,8 @@ namespace Hangman
                  
             if (!string.IsNullOrWhiteSpace(txtUnos.Text))
             {
+                btn_prebaci.Enabled = false;
+
                 if ((txtUnos.Text.Length==1 && lblNepoznataRijec.Text.Contains(txtUnos.Text.ToUpper().ToString())) 
                     || (!JeLiPogodjenaRijec() && !JeLiPogodjenoSlovo()))
                 {
@@ -552,17 +560,17 @@ namespace Hangman
                 case "easy": 
                     if (Suma >= 40) { btnChallenging.Enabled = true; btnChallenging.BackColor = Color.LimeGreen; }
                     if (brojacIzazoviSe >= ukupnoRijeciIzazoviSe && ukupnoRijeciIzazoviSe != 0) btnChallenging.Enabled = false;
-                    if (Suma < 40) btnChallenging.BackColor = Color.Gainsboro;
+                    if (Suma < 40) { btnChallenging.BackColor = Color.Gainsboro; btnChallenging.Enabled = false; }
                     break;
                 case "hard": 
                     if (Suma >= 35) { btnChallenging.Enabled = true; btnChallenging.BackColor = Color.LimeGreen; }
                     if (brojacIzazoviSe >= ukupnoRijeciIzazoviSe && ukupnoRijeciIzazoviSe != 0) btnChallenging.Enabled = false;
-                    if (Suma < 35) btnChallenging.BackColor = Color.Gainsboro;
+                    if (Suma < 35) { btnChallenging.BackColor = Color.Gainsboro; btnChallenging.Enabled = false; }
                     break;
                 case "adv":  
                     if (Suma >= 30) { btnChallenging.Enabled = true; btnChallenging.BackColor = Color.LimeGreen; }
                     if (brojacIzazoviSe >= ukupnoRijeciIzazoviSe && ukupnoRijeciIzazoviSe != 0) btnChallenging.Enabled = false;
-                    if (Suma < 30) btnChallenging.BackColor = Color.Gainsboro;
+                    if (Suma < 30) { btnChallenging.BackColor = Color.Gainsboro; btnChallenging.Enabled = false; }
                     break;
             }
         }
@@ -573,17 +581,17 @@ namespace Hangman
                 case "easy": 
                     if (Suma >= 30) { btnSentences.Enabled = true; btnSentences.BackColor = Color.Gold; }
                     if (brojacLatinskeIzreke >= ukupnoRijeciLatinskeIzreke && ukupnoRijeciLatinskeIzreke != 0) btnSentences.Enabled = false;
-                    if (Suma < 30) btnSentences.BackColor = Color.Gainsboro;
+                    if (Suma < 30) { btnSentences.BackColor = Color.Gainsboro; btnSentences.Enabled = false; }
                     break;
                 case "hard": 
                     if (Suma >= 25) { btnSentences.Enabled = true; btnSentences.BackColor = Color.Gold; }
                     if (brojacLatinskeIzreke >= ukupnoRijeciLatinskeIzreke && ukupnoRijeciLatinskeIzreke != 0) btnSentences.Enabled = false;
-                    if (Suma < 25) btnSentences.BackColor = Color.Gainsboro;
+                    if (Suma < 25) { btnSentences.BackColor = Color.Gainsboro; btnSentences.Enabled = false; }
                     break;
                 case "adv":  
                     if (Suma >= 20) { btnSentences.Enabled = true; btnSentences.BackColor = Color.Gold; }
                     if (brojacLatinskeIzreke >= ukupnoRijeciLatinskeIzreke && ukupnoRijeciLatinskeIzreke != 0) btnSentences.Enabled = false;
-                    if (Suma < 20) btnSentences.BackColor = Color.Gainsboro;
+                    if (Suma < 20) { btnSentences.BackColor = Color.Gainsboro; btnSentences.Enabled = false; }
                     break;
             }
         }
@@ -673,6 +681,7 @@ namespace Hangman
             btnChallenging.Enabled = false;
         }
 
+       
         private void btnMode_Click(object sender, EventArgs e)
         {
             brojKlikanja++;
@@ -720,6 +729,13 @@ namespace Hangman
                 lblBrojRijeci.BackColor = Color.Gray;
                 lblBrojRijeci.ForeColor = Color.White;
             }
+
+        }
+
+        //ovaj btn mozemo i izbrisati (i sve linije koda gdje ga referenciramo)
+        private void btn_prebaci_Click(object sender, EventArgs e)
+        {
+            Igranje();
         }
     }
 }
