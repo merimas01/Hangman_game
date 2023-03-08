@@ -15,7 +15,6 @@ C:\Users\User\source\repos\Hangman\Hangman\obj\Debug\Hangman.csproj.AssemblyRefe
 C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\bin\Debug\Hangman.exe.config
 C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\bin\Debug\Hangman.exe
 C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\bin\Debug\Hangman.pdb
-C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\obj\Debug\Hangman.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\obj\Debug\Hangman.frmHangman.resources
 C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\obj\Debug\Hangman.frmInfo.resources
 C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\obj\Debug\Hangman.frmLevels.resources
