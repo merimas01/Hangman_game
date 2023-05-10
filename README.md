@@ -1,25 +1,15 @@
-
-Implementirano je:
-
-- početna forma koja zahtijeva unos imena ili nadimka da bi se igrica započela
-- forma sa 3 nivoa koje korisnik može da bira
-- forma gdje igrica počinje
-- info polje koje otvara formu gdje pišu detalji o pravilima igre
+List of functionalities:
+- levels
+- info section about game
 - dark/light mode
-- pomoćno slovo
-- dugme koje otvara formu gdje se prikaziva korisnikov trenutni uspjeh
-- dugme za sljedeću riječ
-- numerisanje koje ide nakon svake nove riječi, tipa: 3/20
-- bodovanje svake pogođene riječi
-- dvije nove opcije koje korisnik može otvoriti ako ostvari dovoljan broj bodova
-- korisnik može unositi ili jedno slovo ili cijelu riječ u polje za unos
-- korisnik je ograničen na broj dozvoljenih puta da pogriješi (specifično za svaki level)
-- ako korisnik nije pogodio riječ a ispunio je broj dozvoljenih pokušaja, tražena rijec se pojavi na ekranu
-- dugme Nazad koje vraća korisnika na pogađanje riječi iz početne faze
-- svaka pogođena ili nepogođena riječ se spašava u listu, te se više ne pojavljuje korisniku
-- korisnik ne može dobiti sljedeću riječ ukoliko se prethodna ne pogodi ili se ne iskoristi dozvoljen broj pokušaja za pogađanje
-- riječi se biraju random metodom
-
-
+- help for users (helper letter)
+- info about current score
+- word numbering such as 3/20 (user is currently at third word out of a total of 20)
+- scoring after each guessed word
+- two new options which will be enabled if the user wins enough points (guessing words with a 60-second timer & guessing Latin proverbs)
+- user can type either whole word or just one letter
+- user have limited number of times to fail (specific for each level)
+- user cannot get the next word if the current word is not guessed
+- words are generated randomly and guessed words are not going to be shown again
 
 
