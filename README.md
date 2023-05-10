@@ -20,10 +20,6 @@ Implementirano je:
 - korisnik ne može dobiti sljedeću riječ ukoliko se prethodna ne pogodi ili se ne iskoristi dozvoljen broj pokušaja za pogađanje
 - riječi se biraju random metodom
 
-![4](https://user-images.githubusercontent.com/94557948/188467817-75c5a9b2-d0d1-4a5f-93d2-208fe5d0c70d.png)
 
-![1a](https://user-images.githubusercontent.com/94557948/190172250-deafa705-fe15-4590-b0e2-1ac30eee7543.png)
-
-![1d](https://user-images.githubusercontent.com/94557948/190172397-edc7ad05-0d58-4049-84d3-2a7e35a059c2.png)
 
 
