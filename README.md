@@ -1,8 +1,8 @@
-List of functionalities:
-- levels
+The game has the following list of functionalities:
+- chosing a level (easy, medium, advanced)
 - info section about game
 - dark/light mode
-- help for users (helper letter)
+- help for users (helper letter) 
 - info about current score
 - word numbering such as 3/20 (user is currently at third word out of a total of 20)
 - scoring after each guessed word
