@@ -1,5 +1,5 @@
 The game has the following list of functionalities:
-- chosing a level (easy, medium, advanced)
+- choosing the level (easy, medium, advanced)
 - info section about game
 - dark/light mode
 - help for users (helper letter) 
