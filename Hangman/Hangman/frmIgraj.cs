@@ -104,11 +104,11 @@ namespace Hangman
                 if (TrenutnoPredjenihRijeci >= ukupnoRijeciPocetna)
                 {
                     lblBrojRijeci.Text = $"{ukupnoRijeciPocetna}/{ukupnoRijeciPocetna}";
-                    btn_prebaci.Enabled = false;
+                   // btn_prebaci.Enabled = false;
                 }
                 else
                 {
-                    btn_prebaci.Enabled = true;
+                   // btn_prebaci.Enabled = true;
                     lblBrojRijeci.Text = $"{TrenutnoPredjenihRijeci}/{ukupnoRijeciPocetna}";
                 }  
             }
@@ -120,11 +120,11 @@ namespace Hangman
                 if (brojacLatinskeIzreke >= ukupnoRijeciLatinskeIzreke)
                 {
                     lblBrojRijeci.Text = $"{ukupnoRijeciLatinskeIzreke}/{ukupnoRijeciLatinskeIzreke}";
-                    btn_prebaci.Enabled = false;
+                    //btn_prebaci.Enabled = false;
                 }                   
                 else 
                 {
-                    btn_prebaci.Enabled = true;
+                   // btn_prebaci.Enabled = true;
                     lblBrojRijeci.Text = $"{brojacLatinskeIzreke}/{ukupnoRijeciLatinskeIzreke}";
                 }                  
             }
@@ -136,11 +136,11 @@ namespace Hangman
                 if (brojacIzazoviSe >= ukupnoRijeciIzazoviSe)
                 {
                     lblBrojRijeci.Text = $"{ukupnoRijeciIzazoviSe}/{ukupnoRijeciIzazoviSe}";
-                    btn_prebaci.Enabled = false;
+                   // btn_prebaci.Enabled = false;
                 }
                 else
                 {
-                    btn_prebaci.Enabled = true;
+                 //   btn_prebaci.Enabled = true;
                     lblBrojRijeci.Text = $"{brojacIzazoviSe}/{ukupnoRijeciIzazoviSe}";
                 }                   
             }
@@ -311,7 +311,7 @@ namespace Hangman
                  
             if (!string.IsNullOrWhiteSpace(txtUnos.Text))
             {
-                btn_prebaci.Enabled = false;
+                //btn_prebaci.Enabled = false;
 
                 if ((txtUnos.Text.Length==1 && lblNepoznataRijec.Text.Contains(txtUnos.Text.ToUpper().ToString())) 
                     || (!JeLiPogodjenaRijec() && !JeLiPogodjenoSlovo()))

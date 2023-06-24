@@ -64,7 +64,6 @@ namespace Hangman
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
             this.lblBrojRijeci = new System.Windows.Forms.Label();
             this.lblObjasnjenje = new System.Windows.Forms.Label();
-            this.btn_prebaci = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPogodiRijec
@@ -403,26 +402,12 @@ namespace Hangman
             this.lblObjasnjenje.Size = new System.Drawing.Size(0, 17);
             this.lblObjasnjenje.TabIndex = 35;
             // 
-            // btn_prebaci
-            // 
-            this.btn_prebaci.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_prebaci.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_prebaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_prebaci.Location = new System.Drawing.Point(738, 624);
-            this.btn_prebaci.Name = "btn_prebaci";
-            this.btn_prebaci.Size = new System.Drawing.Size(184, 47);
-            this.btn_prebaci.TabIndex = 36;
-            this.btn_prebaci.Text = "Prebaci na sljedeću";
-            this.btn_prebaci.UseVisualStyleBackColor = false;
-            this.btn_prebaci.Click += new System.EventHandler(this.btn_prebaci_Click);
-            // 
             // frmIgraj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(1220, 705);
-            this.Controls.Add(this.btn_prebaci);
             this.Controls.Add(this.lblObjasnjenje);
             this.Controls.Add(this.lblBrojRijeci);
             this.Controls.Add(this.btnMode);
@@ -495,6 +480,5 @@ namespace Hangman
         private System.Windows.Forms.ToolTip toolTip7;
         private System.Windows.Forms.Label lblBrojRijeci;
         private System.Windows.Forms.Label lblObjasnjenje;
-        private System.Windows.Forms.Button btn_prebaci;
     }
 }
