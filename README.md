@@ -12,4 +12,10 @@ The game has the following list of functionalities:
 - user cannot get the next word if the current word is not guessed
 - words are generated randomly and guessed words are not going to be shown again
 
+Here are some examples:
+
+![slika1](https://github.com/merimas01/Hangman_game/assets/94557948/adc1bdbe-7092-4308-996f-ae6ecf6ea6f5)
+
+![slika4](https://github.com/merimas01/Hangman_game/assets/94557948/2f304f60-02a5-44e5-b296-5079712b2091)
+
 
