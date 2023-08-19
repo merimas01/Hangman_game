@@ -9,7 +9,7 @@ The game has the following list of functionalities:
 - two new options which will be enabled if the user wins enough points (guessing words with a 60-second timer & guessing Latin proverbs)
 - user can type either whole word or just one letter
 - user have limited number of times to fail (specific for each level)
-- user cannot get the next word if the current word is not guessed
+- user cannot get the next word if the current word is not guessed or doesn't have a maximum number of fails
 - words are generated randomly and guessed words are not going to be shown again
 
 Here are some examples:
