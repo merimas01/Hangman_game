@@ -25,3 +25,4 @@ C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\obj\Debug\Hangman.csproj.Gene
 C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\obj\Debug\Hangman.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\obj\Debug\Hangman.exe
 C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\obj\Debug\Hangman.pdb
+C:\Users\User\Desktop\Hangman_game\Hangman\Hangman\obj\Debug\Hangman.csproj.AssemblyReference.cache

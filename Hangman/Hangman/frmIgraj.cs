@@ -422,6 +422,8 @@ namespace Hangman
 
         private void OmoguciBtnHelp()
         {
+            btnHelp.Enabled = false;
+
             if (Suma >= 3)
             {
                 int k = 0;
@@ -466,6 +468,7 @@ namespace Hangman
                 nepogodjenaSlova = 0;
             }
         }
+
         private void btnHelp_Click(object sender, EventArgs e)
         {
             BrojacHelp++;

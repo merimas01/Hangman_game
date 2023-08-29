@@ -61,7 +61,7 @@ namespace Hangman
                     "Broj grešaka: 2 -> Bodovi: 6" + Environment.NewLine +
                     "Broj grešaka: 3 -> Bodovi: 4" + Environment.NewLine +
                     "Broj grešaka: 4 -> Bodovi: 2" + Environment.NewLine +
-                    "Bodove dobivate ukoliko pogodite datu riječ/izreku." + Environment.NewLine + Environment.NewLine +
+                    "Bodove dobivate ukoliko pogodite/upišete ispravno datu riječ/izreku." + Environment.NewLine + Environment.NewLine +
                     "Pritiskom na X (cancel) Vaš trenutni uspjeh se poništava."+Environment.NewLine+Environment.NewLine+
                     "Igranje možete prekinuti kada god želite." + Environment.NewLine + Environment.NewLine +
                     "SRETNO!";
@@ -87,7 +87,7 @@ namespace Hangman
                     "Broj grešaka: 1 -> Bodovi: 12" + Environment.NewLine +
                     "Broj grešaka: 2 -> Bodovi: 9" + Environment.NewLine +
                     "Broj grešaka: 3 -> Bodovi: 6" + Environment.NewLine +
-                    "Bodove dobivate ukoliko pogodite datu riječ/izreku." + Environment.NewLine + Environment.NewLine +
+                    "Bodove dobivate ukoliko pogodite/upišete ispravno datu riječ/izreku." + Environment.NewLine + Environment.NewLine +
                     "Pritiskom na X (cancel) Vaš trenutni uspjeh se poništava." + Environment.NewLine + Environment.NewLine +
                     "Igranje možete prekinuti kada god želite." + Environment.NewLine + Environment.NewLine +
                     "SRETNO!";
@@ -112,7 +112,7 @@ namespace Hangman
                        "Broj grešaka: 0 -> Bodovi: 20" + Environment.NewLine +
                        "Broj grešaka: 1 -> Bodovi: 15" + Environment.NewLine +
                        "Broj grešaka: 2 -> Bodovi: 10" + Environment.NewLine +
-                       "Bodove dobivate ukoliko pogodite datu riječ/izreku." + Environment.NewLine + Environment.NewLine +
+                       "Bodove dobivate ukoliko pogodite/upišete ispravno datu riječ/izreku." + Environment.NewLine + Environment.NewLine +
                        "Pritiskom na X (cancel) Vaš trenutni uspjeh se poništava." + Environment.NewLine + Environment.NewLine +
                        "Igranje možete prekinuti kada god želite." + Environment.NewLine + Environment.NewLine +
                        "SRETNO!";
