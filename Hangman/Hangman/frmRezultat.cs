@@ -21,7 +21,7 @@ namespace Hangman
         {
             if (frmIgraj.brojKlikanja % 2 != 0)
             {
-                this.BackColor = Color.Black;
+                this.BackColor = Color.DarkSlateGray;
                 lblTekst.ForeColor = Color.White;
             }
             else

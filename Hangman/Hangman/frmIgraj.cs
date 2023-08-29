@@ -53,7 +53,7 @@ namespace Hangman
 
         private void StringoviAdvanced()
         {
-            Stringovi = new List<string>() { "AUTOREFERENCIJALNOST", "NEKONVENCIJALNOST", "SUVERENITET", "NEZAINTERESIRANOST", "PLUSKVAMPERFEKT", "ZLOUPOTRIJEBITI", "DISKVALIFIKOVATI" };
+            Stringovi = new List<string>() { "AUTOREFERENCIJALNOST", "NEKONVENCIONALNOST", "SUVERENITET", "NEZAINTERESIRANOST", "PLUSKVAMPERFEKT", "ZLOUPOTRIJEBITI", "DISKVALIFIKOVATI" };
             ukupnoRijeciPocetna = Stringovi.Count;
         }
         private void StringoviEasy()
@@ -507,11 +507,22 @@ namespace Hangman
             Igranje();
 
             if (Level == "adv")
+            {
                 Text = "Level: Teško";
+            }          
             else if (Level == "hard")
+            {
                 Text = "Level: Malo teže";
+            }               
             else if (Level == "easy")
+            {
                 Text = "Level: Lagano";
+            }
+
+            //if (buttonSentencesClicked == true)
+            //    Text += " - Latinske izreke";
+            //else if (buttonChallengingClicked == true)
+            //    Text += " - Izazovi se";
         }
 
         private void btnInfo_Click(object sender, EventArgs e)
@@ -691,7 +702,7 @@ namespace Hangman
             if (brojKlikanja % 2 != 0)
             {
                 btnMode.Text = "TAMNO";
-                this.BackColor = Color.Black;
+                this.BackColor = Color.DarkSlateGray;
                 lblPogodiRijec.ForeColor = Color.White;
                 lblUkucaj.ForeColor = Color.White;
                 lblPokusaj.ForeColor = Color.White;
@@ -706,9 +717,9 @@ namespace Hangman
                 lblHelp.ForeColor = Color.White;
                 lblBrojacHint.ForeColor = Color.White;
                 txtUnos.ForeColor = Color.White;
-                txtUnos.BackColor = Color.Black;
+                txtUnos.BackColor = Color.DarkSlateGray;
                 lblBrojRijeci.BackColor = Color.White;
-                lblBrojRijeci.ForeColor = Color.Black;
+                lblBrojRijeci.ForeColor = Color.DarkSlateGray;
             }
             else
             {
