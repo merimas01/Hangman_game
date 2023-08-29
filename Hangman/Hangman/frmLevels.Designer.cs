@@ -55,7 +55,7 @@ namespace Hangman
             this.btnHard.Name = "btnHard";
             this.btnHard.Size = new System.Drawing.Size(150, 72);
             this.btnHard.TabIndex = 1;
-            this.btnHard.Text = "Malo teže";
+            this.btnHard.Text = "Srednje";
             this.btnHard.UseVisualStyleBackColor = false;
             this.btnHard.Click += new System.EventHandler(this.btnHard_Click);
             // 

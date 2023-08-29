@@ -434,7 +434,6 @@ namespace Hangman
             this.Controls.Add(this.lblPokusaj);
             this.Controls.Add(this.lblNepoznataRijec);
             this.Controls.Add(this.lblPogodiRijec);
-            this.MaximizeBox = false;
             this.Name = "frmIgraj";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Igraj";

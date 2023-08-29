@@ -512,7 +512,7 @@ namespace Hangman
             }          
             else if (Level == "hard")
             {
-                Text = "Level: Malo teže";
+                Text = "Level: Srednje";
             }               
             else if (Level == "easy")
             {
