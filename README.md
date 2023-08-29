@@ -19,7 +19,7 @@ Here are some examples:
 
 ![slika4](https://github.com/merimas01/Hangman_game/assets/94557948/2f304f60-02a5-44e5-b296-5079712b2091)
 
-![slika5](https://github.com/merimas01/Hangman_game/assets/94557948/558e171e-02ac-4270-be64-99a95d44a78c)
+![dark2](https://github.com/merimas01/Hangman_game/assets/94557948/b8729b87-0dff-4941-993e-8c5ca352c295)
 
 
 
